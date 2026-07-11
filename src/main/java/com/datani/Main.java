@@ -3,7 +3,7 @@ package com.datani;
 import com.datani.navigation.NavigationManager;
 import javafx.application.Application;
 import javafx.stage.Stage;
-//adfafsddvfewfvefve
+
 /**
  * Titik masuk aplikasi DATANI (Sistem Informasi Data Petani).
  * <p>

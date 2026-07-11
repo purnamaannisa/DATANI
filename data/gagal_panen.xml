@@ -41,4 +41,18 @@
     <tanggalVerifikasi>2026-07-11</tanggalVerifikasi>
     <verifikatorUsername>petugas</verifikatorUsername>
   </com.datani.model.LaporanGagalPanen>
+  <com.datani.model.LaporanGagalPanen>
+    <id>4</id>
+    <petaniId>4</petaniId>
+    <petaniNama>nisa</petaniNama>
+    <penyebab>Banjir</penyebab>
+    <luasTerdampak>80.0</luasTerdampak>
+    <persentaseKerusakan>90</persentaseKerusakan>
+    <tanggalKejadian>2026-07-01</tanggalKejadian>
+    <fotoBukti>C:\Users\apa67\Pictures\foto saya.jpeg</fotoBukti>
+    <status>Terverifikasi</status>
+    <catatanRekomendasi>kkkkkkklklklklklklklklkjkljhjkjhgfdsdfghkl6ytrgyujhrt</catatanRekomendasi>
+    <tanggalVerifikasi>2026-07-12</tanggalVerifikasi>
+    <verifikatorUsername>petugas</verifikatorUsername>
+  </com.datani.model.LaporanGagalPanen>
 </list>

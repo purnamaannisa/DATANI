@@ -1,5 +1,6 @@
 package com.datani.service;
 
+import com.datani.datastructure.PohonPetani;
 import com.datani.model.LaporanGagalPanen;
 import com.datani.model.Pengajuan;
 import com.datani.model.Petani;
@@ -29,6 +30,7 @@ public final class DataService {
     private static final ObservableList<Petani> PETANI_LIST = FXCollections.observableArrayList();
     private static final ObservableList<Pengajuan> PENGAJUAN_LIST = FXCollections.observableArrayList();
     private static final ObservableList<LaporanGagalPanen> GAGAL_PANEN_LIST = FXCollections.observableArrayList();
+    private static PohonPetani pohonPetani = new PohonPetani();
 
     private static final String DATA_DIR = "data";
     private static final XStream xstream = new XStream();
@@ -132,13 +134,21 @@ public final class DataService {
             GAGAL_PANEN_LIST.add(l);
             saveToXml(new ArrayList<>(GAGAL_PANEN_LIST), "gagal_panen.xml");
         }
+        
+        // Build BST (Tugas ASD)
+        pohonPetani = new PohonPetani();
+        for (Petani p : PETANI_LIST) {
+            pohonPetani.sisipkanPetaniBaru(p);
+        }
     }
 
     private static void registerPetaniInternal(String nik, String password, String namaLengkap,
                                                  String nomorKK, String alamat, String nomorHP,
                                                  String kelompokTani) {
         USERS.add(new User(nextUserId++, nik, password, Role.PETANI));
-        PETANI_LIST.add(new Petani(nextPetaniId++, nik, namaLengkap, nomorKK, alamat, nomorHP, kelompokTani));
+        Petani p = new Petani(nextPetaniId++, nik, namaLengkap, nomorKK, alamat, nomorHP, kelompokTani);
+        PETANI_LIST.add(p);
+        pohonPetani.sisipkanPetaniBaru(p); // Insert ke BST
     }
 
     // ------------------------------------------------------------------
@@ -203,7 +213,9 @@ public final class DataService {
         if (nik == null) {
             return Optional.empty();
         }
-        return PETANI_LIST.stream().filter(p -> p.getNik().equalsIgnoreCase(nik.trim())).findFirst();
+        // Menggunakan pencarian O(log n) dengan BST (Tugas ASD)
+        Petani p = pohonPetani.cariBerdasarkanNIK(nik.trim());
+        return Optional.ofNullable(p);
     }
 
     public static Optional<Petani> getPetaniById(int id) {

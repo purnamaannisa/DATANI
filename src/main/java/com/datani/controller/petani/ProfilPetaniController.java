@@ -1,7 +1,11 @@
 package com.datani.controller.petani;
 
+import com.datani.datastructure.RiwayatPengajuanList;
+import com.datani.model.Pengajuan;
 import com.datani.model.Petani;
+import com.datani.service.DataService;
 import com.datani.session.UserSession;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
@@ -58,6 +62,14 @@ public class ProfilPetaniController {
         alamatField.setText(petani.getAlamat());
         nomorHPField.setText(petani.getNomorHP());
         kelompokTaniField.setText(petani.getKelompokTani());
+        
+        // ASD Task 5: Doubly Linked List
+        RiwayatPengajuanList riwayatDll = new RiwayatPengajuanList();
+        ObservableList<Pengajuan> riwayat = DataService.getPengajuanByPetaniId(petani.getId());
+        for (Pengajuan p : riwayat) {
+            riwayatDll.tambahRiwayatBaru(p);
+        }
+        System.out.println("[Tugas ASD] Berhasil merangkai " + riwayatDll.getJumlahRiwayat() + " histori pengajuan ke dalam Doubly Linked List.");
     }
 
     @FXML

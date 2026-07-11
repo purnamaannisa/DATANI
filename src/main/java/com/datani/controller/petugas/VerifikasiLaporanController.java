@@ -1,5 +1,7 @@
 package com.datani.controller.petugas;
 
+import com.datani.datastructure.AntreanLaporan;
+import com.datani.datastructure.PengurutanData;
 import com.datani.model.LaporanGagalPanen;
 import com.datani.service.DataService;
 import com.datani.session.UserSession;
@@ -12,6 +14,8 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.VBox;
 import java.io.File;
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 public class VerifikasiLaporanController {
 
@@ -49,13 +53,31 @@ public class VerifikasiLaporanController {
     }
 
     private void refreshTable() {
-        ObservableList<LaporanGagalPanen> antrean = FXCollections.observableArrayList();
+        List<LaporanGagalPanen> tempList = new ArrayList<>();
         for (LaporanGagalPanen l : DataService.getAllLaporanGagalPanen()) {
             if (l.getStatus().equals("Menunggu Peninjauan")) {
-                antrean.add(l);
+                tempList.add(l);
             }
         }
-        antreanTable.setItems(antrean);
+        
+        // ASD Task 5: Quick Sort (Urutkan dari kerusakan terparah/descending)
+        if (!tempList.isEmpty()) {
+            PengurutanData.quickSortKerusakan(tempList, 0, tempList.size() - 1);
+        }
+
+        // ASD Task 1: Masukkan ke Queue (Antrean FIFO prioritas)
+        AntreanLaporan antreanBpp = new AntreanLaporan();
+        for (LaporanGagalPanen l : tempList) {
+            antreanBpp.tambahAntrean(l);
+        }
+
+        // Keluarkan dari Queue untuk ditampilkan di UI TableView
+        ObservableList<LaporanGagalPanen> antreanVisual = FXCollections.observableArrayList();
+        while (!antreanBpp.isKosong()) {
+            antreanVisual.add(antreanBpp.prosesPengajuanDepan());
+        }
+
+        antreanTable.setItems(antreanVisual);
         detailContainer.setVisible(false);
         laporanTerpilih = null;
     }

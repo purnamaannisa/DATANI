@@ -96,4 +96,16 @@
     <tanggalPengajuan>2026-07-11</tanggalPengajuan>
     <tanggalVerifikasi>2026-07-11</tanggalVerifikasi>
   </com.datani.model.Pengajuan>
+  <com.datani.model.Pengajuan>
+    <id>10</id>
+    <petaniId>4</petaniId>
+    <luasLahan>9800.0</luasLahan>
+    <statusKepemilikan>Milik Sendiri</statusKepemilikan>
+    <jenisTanaman>Kakao</jenisTanaman>
+    <fotoLahan>C:\Users\apa67\Pictures\foto saya.jpeg</fotoLahan>
+    <status>DITOLAK</status>
+    <alasanPenolakan>hkhkhkhkhhhhh</alasanPenolakan>
+    <tanggalPengajuan>2026-07-12</tanggalPengajuan>
+    <tanggalVerifikasi>2026-07-12</tanggalVerifikasi>
+  </com.datani.model.Pengajuan>
 </list>

@@ -1,5 +1,6 @@
 package com.datani.navigation;
 
+import com.datani.datastructure.TumpukanNavigasi;
 import com.datani.model.Role;
 import com.datani.model.User;
 import com.datani.session.UserSession;
@@ -30,6 +31,10 @@ public final class NavigationManager {
     private static final String APP_TITLE = "DATANI - Sistem Informasi Data Petani";
 
     private static Stage primaryStage;
+    
+    // ASD Task 3: Tumpukan Navigasi
+    private static final TumpukanNavigasi TUMPUKAN_NAVIGASI = new TumpukanNavigasi();
+    private static String currentFxml = null;
 
     private NavigationManager() {
     }
@@ -158,8 +163,24 @@ public final class NavigationManager {
         }
     }
 
+    public static void kembaliKeHalamanSebelumnya() {
+        if (!TUMPUKAN_NAVIGASI.isKosong()) {
+            String fxmlLama = TUMPUKAN_NAVIGASI.kembaliKeHalamanSebelumnya();
+            currentFxml = null; // bypass pushing
+            loadScene(fxmlLama, APP_TITLE + " - Kembali");
+        }
+    }
+
     private static void loadScene(String fxmlPath, String title) {
         try {
+            // ASD Task 3: Simpan riwayat
+            if (currentFxml != null && (TUMPUKAN_NAVIGASI.isKosong() || !Objects.equals(TUMPUKAN_NAVIGASI.lihatHalamanSaatIni(), currentFxml))) {
+                if (currentFxml != null) {
+                    TUMPUKAN_NAVIGASI.bukaHalamanBaru(currentFxml);
+                }
+            }
+            currentFxml = fxmlPath;
+
             URL fxmlUrl = Objects.requireNonNull(NavigationManager.class.getResource(fxmlPath),
                     "FXML tidak ditemukan pada classpath: " + fxmlPath);
             FXMLLoader loader = new FXMLLoader(fxmlUrl);
