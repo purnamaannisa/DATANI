@@ -32,4 +32,10 @@
     <password>pppp</password>
     <role>PETANI</role>
   </com.datani.model.User>
+  <com.datani.model.User>
+    <id>6</id>
+    <nik>1571085508070001</nik>
+    <password>POPOPO</password>
+    <role>PETANI</role>
+  </com.datani.model.User>
 </list>

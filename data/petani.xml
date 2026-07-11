@@ -35,4 +35,13 @@
     <nomorHP>0800000000000</nomorHP>
     <kelompokTani>suka</kelompokTani>
   </com.datani.model.Petani>
+  <com.datani.model.Petani>
+    <id>5</id>
+    <nik>1571085508070001</nik>
+    <namaLengkap>ALFIA SYAKIRA</namaLengkap>
+    <nomorKK>0000000000000000</nomorKK>
+    <alamat>JLN.KLOUHIN</alamat>
+    <nomorHP>0800000000000</nomorHP>
+    <kelompokTani>KOPIKULI</kelompokTani>
+  </com.datani.model.Petani>
 </list>
