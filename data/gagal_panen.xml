@@ -1,0 +1,44 @@
+<list>
+  <com.datani.model.LaporanGagalPanen>
+    <id>1</id>
+    <petaniId>1</petaniId>
+    <petaniNama>Budi Santoso</petaniNama>
+    <penyebab>Hama/Penyakit</penyebab>
+    <luasTerdampak>0.5</luasTerdampak>
+    <persentaseKerusakan>70</persentaseKerusakan>
+    <tanggalKejadian>2026-07-06</tanggalKejadian>
+    <fotoBukti>sample-photos/damage_budi_1.jpg</fotoBukti>
+    <status>Terverifikasi</status>
+    <catatanRekomendasi>Disetujui untuk alokasi pupuk darurat.</catatanRekomendasi>
+    <tanggalVerifikasi>2026-07-07</tanggalVerifikasi>
+    <verifikatorUsername>petugas</verifikatorUsername>
+  </com.datani.model.LaporanGagalPanen>
+  <com.datani.model.LaporanGagalPanen>
+    <id>2</id>
+    <petaniId>1</petaniId>
+    <petaniNama>Budi Santoso</petaniNama>
+    <penyebab>Bencana Alam</penyebab>
+    <luasTerdampak>200.0</luasTerdampak>
+    <persentaseKerusakan>60</persentaseKerusakan>
+    <tanggalKejadian>2026-07-08</tanggalKejadian>
+    <fotoBukti>C:\Users\apa67\Pictures\foto saya.jpeg</fotoBukti>
+    <status>Terverifikasi</status>
+    <catatanRekomendasi>silahkanasoqw wfguegyv</catatanRekomendasi>
+    <tanggalVerifikasi>2026-07-11</tanggalVerifikasi>
+    <verifikatorUsername>petugas</verifikatorUsername>
+  </com.datani.model.LaporanGagalPanen>
+  <com.datani.model.LaporanGagalPanen>
+    <id>3</id>
+    <petaniId>4</petaniId>
+    <petaniNama>nisa</petaniNama>
+    <penyebab>Kekeringan</penyebab>
+    <luasTerdampak>200.0</luasTerdampak>
+    <persentaseKerusakan>70</persentaseKerusakan>
+    <tanggalKejadian>2026-07-04</tanggalKejadian>
+    <fotoBukti>C:\Users\apa67\Pictures\rpl kuliah umum\WhatsApp Image 2026-06-30 at 11.53.30.jpeg</fotoBukti>
+    <status>Terverifikasi</status>
+    <catatanRekomendasi>abcdefghijkl</catatanRekomendasi>
+    <tanggalVerifikasi>2026-07-11</tanggalVerifikasi>
+    <verifikatorUsername>petugas</verifikatorUsername>
+  </com.datani.model.LaporanGagalPanen>
+</list>

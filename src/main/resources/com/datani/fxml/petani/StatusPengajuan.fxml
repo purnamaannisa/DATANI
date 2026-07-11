@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.datani.controller.petani.StatusPengajuanController"
+            styleClass="app-root">
+    <left>
+        <fx:include source="PetaniSidebar.fxml"/>
+    </left>
+    <top>
+        <fx:include source="../common/HeaderBar.fxml"/>
+    </top>
+    <center>
+        <VBox spacing="16" styleClass="content-area">
+            <padding>
+                <Insets top="28" right="32" bottom="28" left="32"/>
+            </padding>
+
+            <Label text="Status Pengajuan" styleClass="page-title"/>
+            <Label fx:id="subtitleLabel" text="Menampilkan pengajuan Anda" styleClass="page-subtitle"/>
+
+            <TableView fx:id="statusTable" VBox.vgrow="ALWAYS" styleClass="data-table">
+                <columns>
+                    <TableColumn fx:id="idColumn" text="ID Pengajuan" prefWidth="100"/>
+                    <TableColumn fx:id="tanggalColumn" text="Tanggal Pengajuan" prefWidth="140"/>
+                    <TableColumn fx:id="luasLahanColumn" text="Luas Lahan" prefWidth="100"/>
+                    <TableColumn fx:id="jenisTanamanColumn" text="Jenis Tanaman" prefWidth="130"/>
+                    <TableColumn fx:id="statusKepemilikanColumn" text="Status Kepemilikan" prefWidth="150"/>
+                    <TableColumn fx:id="statusColumn" text="Status Verifikasi" prefWidth="150"/>
+                    <TableColumn fx:id="detailColumn" text="Detail" prefWidth="120"/>
+                </columns>
+            </TableView>
+        </VBox>
+    </center>
+</BorderPane>

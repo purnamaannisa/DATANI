@@ -1,0 +1,35 @@
+<list>
+  <com.datani.model.User>
+    <id>1</id>
+    <password>petugas123</password>
+    <role>PETUGAS_BPP</role>
+    <username>petugas</username>
+    <fullName>Petugas BPP</fullName>
+    <email>petugas.bpp@bpp.go.id</email>
+    <phone>081200000001</phone>
+  </com.datani.model.User>
+  <com.datani.model.User>
+    <id>2</id>
+    <nik>3201012501900002</nik>
+    <password>petani123</password>
+    <role>PETANI</role>
+  </com.datani.model.User>
+  <com.datani.model.User>
+    <id>3</id>
+    <nik>3309022803880003</nik>
+    <password>petani123</password>
+    <role>PETANI</role>
+  </com.datani.model.User>
+  <com.datani.model.User>
+    <id>4</id>
+    <nik>3215017004950004</nik>
+    <password>petani123</password>
+    <role>PETANI</role>
+  </com.datani.model.User>
+  <com.datani.model.User>
+    <id>5</id>
+    <nik>0909090909090900</nik>
+    <password>pppp</password>
+    <role>PETANI</role>
+  </com.datani.model.User>
+</list>

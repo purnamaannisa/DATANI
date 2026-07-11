@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<StackPane xmlns="http://javafx.com/javafx"
+           xmlns:fx="http://javafx.com/fxml"
+           fx:controller="com.datani.controller.RegisterController"
+           styleClass="app-root,register-root">
+    <ScrollPane fitToWidth="true" styleClass="register-scroll">
+        <VBox alignment="TOP_CENTER" spacing="0">
+            <padding>
+                <Insets top="40" right="40" bottom="40" left="40"/>
+            </padding>
+
+            <VBox maxWidth="820" spacing="20" styleClass="register-card">
+                <padding>
+                    <Insets top="32" right="40" bottom="32" left="40"/>
+                </padding>
+
+                <VBox spacing="4">
+                    <Label text="Registrasi Petani" styleClass="login-form-title"/>
+                    <Label text="Lengkapi data diri untuk membuat akun DATANI" styleClass="login-form-subtitle"/>
+                </VBox>
+
+                <GridPane hgap="24" vgap="16" styleClass="register-grid">
+                    <columnConstraints>
+                        <ColumnConstraints percentWidth="50"/>
+                        <ColumnConstraints percentWidth="50"/>
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints/>
+                        <RowConstraints/>
+                        <RowConstraints/>
+                        <RowConstraints/>
+                    </rowConstraints>
+
+                    <!-- Baris 1 -->
+                    <VBox spacing="6" GridPane.rowIndex="0" GridPane.columnIndex="0">
+                        <Label text="NIK" styleClass="field-label"/>
+                        <TextField fx:id="nikField" promptText="16 digit NIK"/>
+                    </VBox>
+                    <VBox spacing="6" GridPane.rowIndex="0" GridPane.columnIndex="1">
+                        <Label text="Nomor KK" styleClass="field-label"/>
+                        <TextField fx:id="nomorKKField" promptText="16 digit Nomor Kartu Keluarga"/>
+                    </VBox>
+
+                    <!-- Baris 2 -->
+                    <VBox spacing="6" GridPane.rowIndex="1" GridPane.columnIndex="0">
+                        <Label text="Nama Lengkap" styleClass="field-label"/>
+                        <TextField fx:id="namaLengkapField" promptText="Nama lengkap sesuai KTP"/>
+                    </VBox>
+                    <VBox spacing="6" GridPane.rowIndex="1" GridPane.columnIndex="1">
+                        <Label text="Nomor HP" styleClass="field-label"/>
+                        <TextField fx:id="nomorHPField" promptText="Contoh: 081234567890"/>
+                    </VBox>
+
+                    <!-- Baris 3 -->
+                    <VBox spacing="6" GridPane.rowIndex="2" GridPane.columnIndex="0">
+                        <Label text="Kelompok Tani" styleClass="field-label"/>
+                        <TextField fx:id="kelompokTaniField" promptText="Nama kelompok tani"/>
+                    </VBox>
+                    <VBox spacing="6" GridPane.rowIndex="2" GridPane.columnIndex="1">
+                        <Label text="Alamat" styleClass="field-label"/>
+                        <TextField fx:id="alamatField" promptText="Alamat lengkap tempat tinggal"/>
+                    </VBox>
+
+                    <!-- Baris 4 -->
+                    <VBox spacing="6" GridPane.rowIndex="3" GridPane.columnIndex="0">
+                        <Label text="Buat Kata Sandi" styleClass="field-label"/>
+                        <PasswordField fx:id="passwordField" promptText="Buat kata sandi"/>
+                    </VBox>
+                    <VBox spacing="6" GridPane.rowIndex="3" GridPane.columnIndex="1">
+                        <Label text="Konfirmasi Kata Sandi" styleClass="field-label"/>
+                        <PasswordField fx:id="konfirmasiPasswordField" promptText="Ulangi kata sandi"/>
+                    </VBox>
+                </GridPane>
+
+                <Label fx:id="errorLabel" styleClass="error-label" wrapText="true"/>
+
+                <HBox spacing="12" alignment="CENTER_RIGHT">
+                    <Button text="Kembali ke Login" styleClass="secondary-button" onAction="#handleKembaliKeLogin"/>
+                    <Button text="Daftar" defaultButton="true" styleClass="primary-button" onAction="#handleDaftar"/>
+                </HBox>
+            </VBox>
+        </VBox>
+    </ScrollPane>
+</StackPane>

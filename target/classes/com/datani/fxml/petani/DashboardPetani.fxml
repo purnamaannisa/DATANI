@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.datani.controller.petani.DashboardPetaniController"
+            styleClass="app-root">
+    <left>
+        <fx:include source="PetaniSidebar.fxml"/>
+    </left>
+    <top>
+        <fx:include source="../common/HeaderBar.fxml"/>
+    </top>
+    <center>
+        <VBox spacing="20" styleClass="content-area">
+            <padding>
+                <Insets top="28" right="32" bottom="28" left="32"/>
+            </padding>
+
+            <Label text="Dasbor Beranda Petani" styleClass="page-title"/>
+            <Label fx:id="welcomeLabel" text="Selamat datang kembali" styleClass="page-subtitle"/>
+
+            <!-- Row 1: Summary Cards -->
+            <HBox spacing="16">
+                <VBox spacing="6" styleClass="stat-card" HBox.hgrow="ALWAYS">
+                    <Label text="Total Luas Lahan Terdaftar" styleClass="stat-card-title"/>
+                    <Label fx:id="totalLahanLabel" text="0.0 Ha" styleClass="stat-card-value"/>
+                </VBox>
+                <VBox spacing="6" styleClass="stat-card" HBox.hgrow="ALWAYS">
+                    <Label text="Pengajuan Pupuk Disetujui" styleClass="stat-card-title"/>
+                    <Label fx:id="pengajuanSetujuLabel" text="0" styleClass="stat-card-value"/>
+                </VBox>
+                <VBox spacing="6" styleClass="stat-card" HBox.hgrow="ALWAYS">
+                    <Label text="Laporan Gagal Panen Aktif" styleClass="stat-card-title"/>
+                    <Label fx:id="gagalPanenLabel" text="0" styleClass="stat-card-value"/>
+                </VBox>
+            </HBox>
+
+            <!-- Row 2: Charts & Historis -->
+            <HBox spacing="20" VBox.vgrow="ALWAYS">
+                <!-- Left: Pie Chart -->
+                <VBox spacing="12" HBox.hgrow="ALWAYS" styleClass="dashboard-panel">
+                    <Label text="Persentase Status Pengajuan" styleClass="section-title"/>
+                    <PieChart fx:id="statusPieChart" labelsVisible="true" legendSide="BOTTOM" VBox.vgrow="ALWAYS"/>
+                </VBox>
+
+                <!-- Right: Alokasi Pupuk 3 Tahun Terakhir -->
+                <VBox spacing="12" HBox.hgrow="ALWAYS" styleClass="dashboard-panel">
+                    <Label text="Alokasi Pupuk 3 Tahun Terakhir" styleClass="section-title"/>
+                    <TableView fx:id="historisTable" VBox.vgrow="ALWAYS">
+                        <columns>
+                            <TableColumn fx:id="tahunColumn" text="Tahun" prefWidth="80"/>
+                            <TableColumn fx:id="kuotaColumn" text="Alokasi Kuota (Kg)" prefWidth="150"/>
+                            <TableColumn fx:id="statusPenyaluranColumn" text="Status Penyaluran" prefWidth="130"/>
+                        </columns>
+                    </TableView>
+                </VBox>
+            </HBox>
+
+            <!-- Row 3: Riwayat Pengajuan Terbaru -->
+            <VBox spacing="12" styleClass="dashboard-panel">
+                <Label text="Riwayat Pengajuan Terbaru" styleClass="section-title"/>
+                <TableView fx:id="recentTable" prefHeight="150">
+                    <columns>
+                        <TableColumn fx:id="idColumn" text="ID" prefWidth="50"/>
+                        <TableColumn fx:id="luasLahanColumn" text="Luas Lahan" prefWidth="100"/>
+                        <TableColumn fx:id="jenisTanamanColumn" text="Tanaman" prefWidth="120"/>
+                        <TableColumn fx:id="statusColumn" text="Status" prefWidth="150"/>
+                    </columns>
+                </TableView>
+            </VBox>
+        </VBox>
+    </center>
+</BorderPane>

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.datani.controller.petugas.VerifikasiLaporanController"
+            styleClass="app-root">
+    <left>
+        <fx:include source="PetugasSidebar.fxml"/>
+    </left>
+    <top>
+        <fx:include source="../common/HeaderBar.fxml"/>
+    </top>
+    <center>
+        <SplitPane dividerPositions="0.4">
+            <items>
+                <!-- Kiri: Antrean Laporan -->
+                <VBox spacing="12">
+                    <padding>
+                        <Insets top="16" right="16" bottom="16" left="16"/>
+                    </padding>
+                    <Label text="Antrean Gagal Panen" styleClass="section-title"/>
+                    <TableView fx:id="antreanTable" VBox.vgrow="ALWAYS" styleClass="data-table">
+                        <columns>
+                            <TableColumn fx:id="idColumn" text="ID" prefWidth="50"/>
+                            <TableColumn fx:id="namaColumn" text="Petani" prefWidth="120"/>
+                            <TableColumn fx:id="penyebabColumn" text="Penyebab" prefWidth="100"/>
+                        </columns>
+                    </TableView>
+                </VBox>
+
+                <!-- Kanan: Detail & Verifikasi -->
+                <VBox spacing="16" fx:id="detailContainer" visible="false">
+                    <padding>
+                        <Insets top="16" right="16" bottom="16" left="16"/>
+                    </padding>
+                    <Label text="Detail &amp; Keputusan Verifikasi" styleClass="section-title"/>
+
+                    <GridPane hgap="12" vgap="8">
+                        <Label text="Nama Petani:" GridPane.rowIndex="0" GridPane.columnIndex="0" styleClass="detail-label-bold"/>
+                        <Label fx:id="namaPetaniLabel" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+                        <Label text="Penyebab:" GridPane.rowIndex="1" GridPane.columnIndex="0" styleClass="detail-label-bold"/>
+                        <Label fx:id="penyebabLabel" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+                        <Label text="Luas Lahan Terdampak:" GridPane.rowIndex="2" GridPane.columnIndex="0" styleClass="detail-label-bold"/>
+                        <Label fx:id="luasLabel" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
+                        <Label text="Kerusakan (%):" GridPane.rowIndex="3" GridPane.columnIndex="0" styleClass="detail-label-bold"/>
+                        <Label fx:id="kerusakanLabel" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+
+                        <Label text="Tanggal Kejadian:" GridPane.rowIndex="4" GridPane.columnIndex="0" styleClass="detail-label-bold"/>
+                        <Label fx:id="tanggalLabel" GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+                    </GridPane>
+
+                    <Label text="Foto Bukti Kerusakan:" styleClass="detail-label-bold"/>
+                    <ImageView fx:id="fotoImageView" fitHeight="150" fitWidth="250" preserveRatio="true"/>
+
+                    <Label text="Catatan Rekomendasi / Tindak Lanjut (Wajib):" styleClass="detail-label-bold"/>
+                    <TextArea fx:id="rekomendasiArea" prefRowCount="4" promptText="Masukkan rekomendasi bantuan atau penyesuaian kuota"/>
+
+                    <HBox spacing="12">
+                        <Button text="Setujui Laporan" onAction="#handleSetujui" styleClass="primary-button"/>
+                        <Button text="Tolak Laporan" onAction="#handleTolak" styleClass="danger-button"/>
+                    </HBox>
+                </VBox>
+            </items>
+        </SplitPane>
+    </center>
+</BorderPane>

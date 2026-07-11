@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.datani.controller.LoginController"
+            styleClass="app-root">
+
+    <!-- ===================== KIRI (40%) - Branding ===================== -->
+    <left>
+        <VBox styleClass="login-brand-panel" prefWidth="480" minWidth="380" alignment="CENTER_LEFT" spacing="18">
+            <padding>
+                <Insets top="48" right="48" bottom="48" left="48"/>
+            </padding>
+
+            <StackPane styleClass="login-logo-badge" maxWidth="64" maxHeight="64" prefWidth="64" prefHeight="64">
+                <Label text="D" styleClass="login-logo-letter"/>
+            </StackPane>
+
+            <VBox spacing="4">
+                <Label text="DATANI" styleClass="login-brand-title"/>
+                <Label text="Sistem Informasi Data Petani" styleClass="login-brand-subtitle"/>
+            </VBox>
+
+            <Region prefHeight="12"/>
+
+            <Label text="Platform terpadu untuk pengelolaan data petani, pengajuan pupuk bersubsidi, dan verifikasi lapangan oleh Petugas BPP."
+                   styleClass="login-brand-desc" wrapText="true"/>
+
+            <Region VBox.vgrow="ALWAYS"/>
+
+            <VBox spacing="10" styleClass="login-brand-feature-list">
+                <HBox spacing="10" alignment="CENTER_LEFT">
+                    <Label text="&#10003;" styleClass="login-brand-check"/>
+                    <Label text="Pengajuan pupuk subsidi digital" styleClass="login-brand-feature"/>
+                </HBox>
+                <HBox spacing="10" alignment="CENTER_LEFT">
+                    <Label text="&#10003;" styleClass="login-brand-check"/>
+                    <Label text="Verifikasi data lapangan oleh Petugas BPP" styleClass="login-brand-feature"/>
+                </HBox>
+                <HBox spacing="10" alignment="CENTER_LEFT">
+                    <Label text="&#10003;" styleClass="login-brand-check"/>
+                    <Label text="Pemantauan status pengajuan secara real-time" styleClass="login-brand-feature"/>
+                </HBox>
+            </VBox>
+
+            <Region prefHeight="8"/>
+            <Label text="&#169; DATANI - Sistem Informasi Data Petani" styleClass="login-brand-footer"/>
+        </VBox>
+    </left>
+
+    <!-- ===================== KANAN (60%) - Form Login ===================== -->
+    <center>
+        <StackPane styleClass="login-form-panel">
+            <VBox alignment="CENTER" spacing="0" maxWidth="420" minWidth="360">
+
+                <VBox spacing="4" alignment="CENTER_LEFT">
+                    <Label text="Selamat Datang" styleClass="login-form-title"/>
+                    <Label text="Silakan masuk untuk melanjutkan ke DATANI" styleClass="login-form-subtitle"/>
+                </VBox>
+
+                <Region prefHeight="28"/>
+
+                <TabPane fx:id="loginTabPane" styleClass="login-tabpane" tabClosingPolicy="UNAVAILABLE">
+                    <tabs>
+                        <!-- ===== Tab Petani ===== -->
+                        <Tab text="Petani">
+                            <VBox spacing="16" styleClass="login-tab-content">
+                                <padding>
+                                    <Insets top="24" right="4" bottom="8" left="4"/>
+                                </padding>
+
+                                <VBox spacing="6">
+                                    <Label text="NIK" styleClass="field-label"/>
+                                    <TextField fx:id="nikField" promptText="Masukkan NIK Anda" styleClass="login-input"/>
+                                </VBox>
+
+                                <VBox spacing="6">
+                                    <Label text="Kata Sandi" styleClass="field-label"/>
+                                    <PasswordField fx:id="passwordField" promptText="Masukkan kata sandi Anda" styleClass="login-input"/>
+                                </VBox>
+
+                                <Label fx:id="errorLabelPetani" styleClass="error-label" wrapText="true"/>
+
+                                <Button text="Masuk sebagai Petani" defaultButton="true" maxWidth="Infinity"
+                                        styleClass="primary-button" onAction="#handleLoginPetani"/>
+
+                                <HBox alignment="CENTER" spacing="4">
+                                    <Label text="Belum punya akun?" styleClass="hint-label"/>
+                                    <Hyperlink fx:id="daftarLink" text="Daftar" onAction="#handleGoToRegister"/>
+                                </HBox>
+                            </VBox>
+                        </Tab>
+
+                        <!-- ===== Tab Petugas BPP ===== -->
+                        <Tab text="Petugas BPP">
+                            <VBox spacing="16" styleClass="login-tab-content">
+                                <padding>
+                                    <Insets top="24" right="4" bottom="8" left="4"/>
+                                </padding>
+
+                                <VBox spacing="6">
+                                    <Label text="Username" styleClass="field-label"/>
+                                    <TextField fx:id="usernameField" promptText="Masukkan Username Anda" styleClass="login-input"/>
+                                </VBox>
+
+                                <VBox spacing="6">
+                                    <Label text="Kata Sandi" styleClass="field-label"/>
+                                    <PasswordField fx:id="passwordFieldPetugas" promptText="Masukkan kata sandi Anda" styleClass="login-input"/>
+                                </VBox>
+
+                                <Label fx:id="errorLabelPetugas" styleClass="error-label" wrapText="true"/>
+
+                                <Button text="Masuk sebagai Petugas BPP" defaultButton="true" maxWidth="Infinity"
+                                        styleClass="primary-button" onAction="#handleLoginPetugas"/>
+
+                                <Label text="Khusus akun resmi Petugas BPP. Hubungi administrator apabila belum memiliki akun."
+                                       styleClass="hint-label" wrapText="true"/>
+                            </VBox>
+                        </Tab>
+                    </tabs>
+                </TabPane>
+            </VBox>
+        </StackPane>
+    </center>
+</BorderPane>

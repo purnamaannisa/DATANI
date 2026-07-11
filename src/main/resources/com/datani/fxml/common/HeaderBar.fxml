@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<HBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.datani.controller.common.HeaderBarController"
+      styleClass="header-bar" alignment="CENTER_LEFT" spacing="12">
+    <padding>
+        <Insets top="14" right="28" bottom="14" left="24"/>
+    </padding>
+
+    <Label text="DATANI" styleClass="header-brand"/>
+    <Label text="Sistem Informasi Data Petani" styleClass="header-brand-sub"/>
+
+    <Region HBox.hgrow="ALWAYS"/>
+
+    <HBox alignment="CENTER_LEFT" spacing="10" styleClass="header-user-box">
+        <StackPane styleClass="header-user-avatar" maxWidth="34" maxHeight="34" prefWidth="34" prefHeight="34">
+            <Label fx:id="userInitialLabel" styleClass="header-user-avatar-letter" text="?"/>
+        </StackPane>
+        <VBox spacing="0" alignment="CENTER_LEFT">
+            <Label fx:id="userNameLabel" styleClass="header-user-name" text="Pengguna"/>
+            <Label fx:id="userRoleLabel" styleClass="header-user-role" text="-"/>
+        </VBox>
+    </HBox>
+</HBox>

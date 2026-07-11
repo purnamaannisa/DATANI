@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.datani.controller.petani.PengajuanPupukController"
+            styleClass="app-root">
+    <left>
+        <fx:include source="PetaniSidebar.fxml"/>
+    </left>
+    <top>
+        <fx:include source="../common/HeaderBar.fxml"/>
+    </top>
+    <center>
+        <ScrollPane fitToWidth="true" styleClass="content-scroll">
+            <VBox spacing="16" styleClass="content-area">
+                <padding>
+                    <Insets top="28" right="32" bottom="28" left="32"/>
+                </padding>
+
+                <Label text="Pengajuan Pupuk Subsidi" styleClass="page-title"/>
+                <Label text="Data pribadi Anda dimuat otomatis dari akun. Lengkapi data lahan di bawah ini."
+                       styleClass="page-subtitle" wrapText="true"/>
+
+                <VBox spacing="14" maxWidth="560" styleClass="profile-card">
+                    <padding>
+                        <Insets top="20" right="20" bottom="20" left="20"/>
+                    </padding>
+
+                    <Label text="Data Pribadi (Otomatis)" styleClass="section-title"/>
+
+                    <HBox spacing="24">
+                        <VBox spacing="4" HBox.hgrow="ALWAYS">
+                            <Label text="NIK" styleClass="field-label"/>
+                            <Label fx:id="nikValueLabel" styleClass="field-readonly"/>
+                        </VBox>
+                        <VBox spacing="4" HBox.hgrow="ALWAYS">
+                            <Label text="Nama Lengkap" styleClass="field-label"/>
+                            <Label fx:id="namaLengkapValueLabel" styleClass="field-readonly"/>
+                        </VBox>
+                    </HBox>
+
+                    <HBox spacing="24">
+                        <VBox spacing="4" HBox.hgrow="ALWAYS">
+                            <Label text="Nomor KK" styleClass="field-label"/>
+                            <Label fx:id="nomorKKValueLabel" styleClass="field-readonly"/>
+                        </VBox>
+                        <VBox spacing="4" HBox.hgrow="ALWAYS">
+                            <Label text="Nomor HP" styleClass="field-label"/>
+                            <Label fx:id="nomorHPValueLabel" styleClass="field-readonly"/>
+                        </VBox>
+                    </HBox>
+
+                    <VBox spacing="4">
+                        <Label text="Alamat" styleClass="field-label"/>
+                        <Label fx:id="alamatValueLabel" styleClass="field-readonly" wrapText="true"/>
+                    </VBox>
+
+                    <VBox spacing="4">
+                        <Label text="Kelompok Tani" styleClass="field-label"/>
+                        <Label fx:id="kelompokTaniValueLabel" styleClass="field-readonly"/>
+                    </VBox>
+
+                    <Separator/>
+
+                    <Label text="Data Lahan &amp; Pengajuan" styleClass="section-title"/>
+
+                    <VBox spacing="4">
+                        <Label text="Luas Lahan (hektar)" styleClass="field-label"/>
+                        <TextField fx:id="luasLahanField" promptText="Contoh: 1.5"/>
+                    </VBox>
+
+                    <VBox spacing="4">
+                        <Label text="Status Kepemilikan Lahan" styleClass="field-label"/>
+                        <ComboBox fx:id="statusKepemilikanCombo" promptText="Pilih status kepemilikan" maxWidth="Infinity"/>
+                    </VBox>
+
+                    <VBox spacing="4">
+                        <Label text="Jenis Tanaman" styleClass="field-label"/>
+                        <ComboBox fx:id="jenisTanamanCombo" promptText="Pilih jenis tanaman" maxWidth="Infinity"/>
+                    </VBox>
+
+                    <VBox spacing="4">
+                        <Label text="Upload Foto Bukti Lahan" styleClass="field-label"/>
+                        <HBox spacing="12" alignment="CENTER_LEFT">
+                            <ImageView fx:id="fotoLahanPreview" fitWidth="110" fitHeight="110" preserveRatio="true"/>
+                            <VBox spacing="6">
+                                <Button text="Upload Foto Bukti Lahan" onAction="#handleUploadFotoLahan" styleClass="secondary-button"/>
+                                <Label fx:id="fotoLahanFileNameLabel" styleClass="hint-label" wrapText="true"/>
+                                <Label text="Format: JPG, JPEG, PNG" styleClass="hint-label"/>
+                            </VBox>
+                        </HBox>
+                    </VBox>
+
+                    <Label fx:id="errorLabel" styleClass="error-label" wrapText="true"/>
+
+                    <Button text="Ajukan" onAction="#handleSubmit" styleClass="primary-button" maxWidth="Infinity"/>
+                </VBox>
+            </VBox>
+        </ScrollPane>
+    </center>
+</BorderPane>

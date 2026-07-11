@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.datani.controller.petugas.HasilVerifikasiController"
+            styleClass="app-root">
+    <left>
+        <fx:include source="PetugasSidebar.fxml"/>
+    </left>
+    <top>
+        <fx:include source="../common/HeaderBar.fxml"/>
+    </top>
+    <center>
+        <VBox spacing="16" styleClass="content-area">
+            <padding>
+                <Insets top="28" right="32" bottom="28" left="32"/>
+            </padding>
+
+            <Label text="Hasil Verifikasi" styleClass="page-title"/>
+            <Label text="Riwayat seluruh pengajuan yang telah diverifikasi (hanya tampilan)."
+                   styleClass="page-subtitle" wrapText="true"/>
+
+            <HBox spacing="10" alignment="CENTER_LEFT">
+                <Label text="Filter:" styleClass="field-label"/>
+                <ComboBox fx:id="filterCombo" prefWidth="180"/>
+            </HBox>
+
+            <TableView fx:id="hasilTable" VBox.vgrow="ALWAYS" styleClass="data-table">
+                <columns>
+                    <TableColumn fx:id="idColumn" text="ID Pengajuan" prefWidth="110"/>
+                    <TableColumn fx:id="namaPetaniColumn" text="Nama Petani" prefWidth="180"/>
+                    <TableColumn fx:id="jenisTanamanColumn" text="Jenis Tanaman" prefWidth="150"/>
+                    <TableColumn fx:id="statusColumn" text="Status" prefWidth="130"/>
+                    <TableColumn fx:id="tanggalVerifikasiColumn" text="Tanggal Verifikasi" prefWidth="150"/>
+                </columns>
+            </TableView>
+        </VBox>
+    </center>
+</BorderPane>

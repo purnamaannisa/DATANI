@@ -1,0 +1,38 @@
+<list>
+  <com.datani.model.Petani>
+    <id>1</id>
+    <nik>3201012501900002</nik>
+    <namaLengkap>Budi Santoso</namaLengkap>
+    <nomorKK>3201011234560001</nomorKK>
+    <alamat>Desa Sukamaju, Bogor</alamat>
+    <nomorHP>081300000002</nomorHP>
+    <kelompokTani>Tani Makmur 1</kelompokTani>
+  </com.datani.model.Petani>
+  <com.datani.model.Petani>
+    <id>2</id>
+    <nik>3309022803880003</nik>
+    <namaLengkap>Wayan Sudarma</namaLengkap>
+    <nomorKK>3309021234560002</nomorKK>
+    <alamat>Desa Tegal Rejo, Klaten</alamat>
+    <nomorHP>081300000003</nomorHP>
+    <kelompokTani>Tani Sejahtera</kelompokTani>
+  </com.datani.model.Petani>
+  <com.datani.model.Petani>
+    <id>3</id>
+    <nik>3215017004950004</nik>
+    <namaLengkap>Siti Aminah</namaLengkap>
+    <nomorKK>3215011234560003</nomorKK>
+    <alamat>Desa Cikampek, Karawang</alamat>
+    <nomorHP>081300000004</nomorHP>
+    <kelompokTani>Tani Makmur 2</kelompokTani>
+  </com.datani.model.Petani>
+  <com.datani.model.Petani>
+    <id>4</id>
+    <nik>0909090909090900</nik>
+    <namaLengkap>nisa</namaLengkap>
+    <nomorKK>0000000000000000</nomorKK>
+    <alamat>klaten</alamat>
+    <nomorHP>0800000000000</nomorHP>
+    <kelompokTani>suka</kelompokTani>
+  </com.datani.model.Petani>
+</list>

@@ -1,0 +1,99 @@
+<list>
+  <com.datani.model.Pengajuan>
+    <id>1</id>
+    <petaniId>1</petaniId>
+    <luasLahan>1.5</luasLahan>
+    <statusKepemilikan>Milik Sendiri</statusKepemilikan>
+    <jenisTanaman>Padi</jenisTanaman>
+    <fotoLahan>sample-photos/lahan_budi_1.jpg</fotoLahan>
+    <status>DISETUJUI</status>
+    <tanggalPengajuan>2026-07-01</tanggalPengajuan>
+    <tanggalVerifikasi>2026-07-03</tanggalVerifikasi>
+  </com.datani.model.Pengajuan>
+  <com.datani.model.Pengajuan>
+    <id>2</id>
+    <petaniId>1</petaniId>
+    <luasLahan>0.8</luasLahan>
+    <statusKepemilikan>Sewa</statusKepemilikan>
+    <jenisTanaman>Jagung</jenisTanaman>
+    <fotoLahan>sample-photos/lahan_budi_2.jpg</fotoLahan>
+    <status>MENUNGGU_VERIFIKASI</status>
+    <tanggalPengajuan>2026-07-08</tanggalPengajuan>
+  </com.datani.model.Pengajuan>
+  <com.datani.model.Pengajuan>
+    <id>3</id>
+    <petaniId>2</petaniId>
+    <luasLahan>2.2</luasLahan>
+    <statusKepemilikan>Milik Sendiri</statusKepemilikan>
+    <jenisTanaman>Tebu</jenisTanaman>
+    <fotoLahan>sample-photos/lahan_wayan_1.jpg</fotoLahan>
+    <status>MENUNGGU_VERIFIKASI</status>
+    <tanggalPengajuan>2026-07-04</tanggalPengajuan>
+  </com.datani.model.Pengajuan>
+  <com.datani.model.Pengajuan>
+    <id>4</id>
+    <petaniId>3</petaniId>
+    <luasLahan>1.0</luasLahan>
+    <statusKepemilikan>Milik Sendiri</statusKepemilikan>
+    <jenisTanaman>Kedelai</jenisTanaman>
+    <fotoLahan>sample-photos/lahan_aminah_1.jpg</fotoLahan>
+    <status>DITOLAK</status>
+    <alasanPenolakan>Foto bukti tidak jelas.</alasanPenolakan>
+    <tanggalPengajuan>2026-07-10</tanggalPengajuan>
+    <tanggalVerifikasi>2026-07-11</tanggalVerifikasi>
+  </com.datani.model.Pengajuan>
+  <com.datani.model.Pengajuan>
+    <id>5</id>
+    <petaniId>1</petaniId>
+    <luasLahan>500.0</luasLahan>
+    <statusKepemilikan>Milik Sendiri</statusKepemilikan>
+    <jenisTanaman>Kedelai</jenisTanaman>
+    <fotoLahan>C:\Users\apa67\Pictures\foto saya.jpeg</fotoLahan>
+    <status>DISETUJUI</status>
+    <tanggalPengajuan>2026-07-11</tanggalPengajuan>
+    <tanggalVerifikasi>2026-07-11</tanggalVerifikasi>
+  </com.datani.model.Pengajuan>
+  <com.datani.model.Pengajuan>
+    <id>6</id>
+    <petaniId>1</petaniId>
+    <luasLahan>32434.0</luasLahan>
+    <statusKepemilikan>Milik Sendiri</statusKepemilikan>
+    <jenisTanaman>Padi</jenisTanaman>
+    <fotoLahan>C:\Users\apa67\Pictures\foto saya.jpeg</fotoLahan>
+    <status>MENUNGGU_VERIFIKASI</status>
+    <tanggalPengajuan>2026-07-11</tanggalPengajuan>
+  </com.datani.model.Pengajuan>
+  <com.datani.model.Pengajuan>
+    <id>7</id>
+    <petaniId>4</petaniId>
+    <luasLahan>20.0</luasLahan>
+    <statusKepemilikan>Milik Sendiri</statusKepemilikan>
+    <jenisTanaman>Padi</jenisTanaman>
+    <fotoLahan>C:\Users\apa67\Pictures\foto saya.jpeg</fotoLahan>
+    <status>MENUNGGU_VERIFIKASI</status>
+    <tanggalPengajuan>2026-07-11</tanggalPengajuan>
+  </com.datani.model.Pengajuan>
+  <com.datani.model.Pengajuan>
+    <id>8</id>
+    <petaniId>4</petaniId>
+    <luasLahan>200.0</luasLahan>
+    <statusKepemilikan>Sewa</statusKepemilikan>
+    <jenisTanaman>Cabai</jenisTanaman>
+    <fotoLahan>C:\Users\apa67\Pictures\foto saya.jpeg</fotoLahan>
+    <status>DISETUJUI</status>
+    <tanggalPengajuan>2026-07-11</tanggalPengajuan>
+    <tanggalVerifikasi>2026-07-11</tanggalVerifikasi>
+  </com.datani.model.Pengajuan>
+  <com.datani.model.Pengajuan>
+    <id>9</id>
+    <petaniId>4</petaniId>
+    <luasLahan>2000.0</luasLahan>
+    <statusKepemilikan>Milik Sendiri</statusKepemilikan>
+    <jenisTanaman>Jagung</jenisTanaman>
+    <fotoLahan>C:\Users\apa67\Pictures\foto saya.jpeg</fotoLahan>
+    <status>DITOLAK</status>
+    <alasanPenolakan>perbaiki foto bukti lahan</alasanPenolakan>
+    <tanggalPengajuan>2026-07-11</tanggalPengajuan>
+    <tanggalVerifikasi>2026-07-11</tanggalVerifikasi>
+  </com.datani.model.Pengajuan>
+</list>
