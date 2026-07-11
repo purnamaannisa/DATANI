@@ -25,7 +25,7 @@
                 <Insets top="28" right="32" bottom="28" left="32"/>
             </padding>
 
-            <Label text="Dasbor Beranda Petani" styleClass="page-title"/>
+            <Label text="Dashboard Beranda Petani" styleClass="page-title"/>
             <Label fx:id="welcomeLabel" text="Selamat datang kembali" styleClass="page-subtitle"/>
 
             <!-- Row 1: Summary Cards -->
