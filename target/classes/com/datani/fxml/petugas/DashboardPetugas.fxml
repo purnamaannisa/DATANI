@@ -30,7 +30,7 @@
             <!-- Header Bar -->
             <HBox spacing="10" alignment="CENTER_LEFT">
                 <VBox HBox.hgrow="ALWAYS">
-                    <Label styleClass="page-title" text="Dasbor Monitoring Petugas BPP" />
+                    <Label styleClass="page-title" text="Beranda Petugas BPP" />
                     <Label styleClass="page-subtitle" text="Ringkasan penyaluran pupuk subsidi dan peninjauan wilayah UPTD BP4 Pakem" />
                 </VBox>
                 <Button text="Unduh Laporan PDF" onAction="#handleUnduhPdf" styleClass="primary-button" />
@@ -66,13 +66,13 @@
             <!-- Row 2: Charts (Kanan-Kiri Sebelahan) -->
             <HBox spacing="20">
                 <!-- Left: Pie Chart Pengajuan -->
-                <VBox spacing="12" styleClass="dashboard-panel" HBox.hgrow="ALWAYS" prefHeight="320">
+                <VBox spacing="12" styleClass="dashboard-panel" HBox.hgrow="ALWAYS" prefHeight="420">
                     <Label styleClass="section-title" text="Akumulasi Status Pengajuan Wilayah" />
                     <PieChart fx:id="statusPieChart" labelsVisible="true" legendSide="BOTTOM" VBox.vgrow="ALWAYS" />
                 </VBox>
 
                 <!-- Right: Bar Chart Distribusi -->
-                <VBox spacing="12" styleClass="dashboard-panel" HBox.hgrow="ALWAYS" prefHeight="320">
+                <VBox spacing="12" styleClass="dashboard-panel" HBox.hgrow="ALWAYS" prefHeight="420">
                     <Label styleClass="section-title" text="Distribusi Pupuk Tahunan" />
                     <BarChart fx:id="distribusiBarChart" VBox.vgrow="ALWAYS">
                         <xAxis>
@@ -89,6 +89,9 @@
             <VBox spacing="12" styleClass="dashboard-panel">
                 <Label styleClass="section-title" text="Data Detail Penyaluran Pupuk Tahunan" />
                 <TableView fx:id="distribusiTable" prefHeight="150">
+                    <columnResizePolicy>
+                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY"/>
+                    </columnResizePolicy>
                     <columns>
                         <TableColumn fx:id="tahunColumn" text="Tahun" prefWidth="120"/>
                         <TableColumn fx:id="jumlahColumn" text="Jumlah Penyaluran" prefWidth="250"/>

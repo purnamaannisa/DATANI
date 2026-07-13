@@ -11,11 +11,11 @@
       fx:controller="com.datani.controller.petani.PetaniSidebarController"
       styleClass="sidebar" prefWidth="230" spacing="4">
     <padding>
-        <Insets top="24" right="12" bottom="24" left="12"/>
+        <Insets top="34" right="12" bottom="24" left="12"/>
     </padding>
 
     <Label text="DATANI" styleClass="sidebar-brand"/>
-    <Label text="Portal Petani" styleClass="sidebar-brand-sub"/>
+    <Label text="Sistem Informasi Pengajuan Data Petani" styleClass="sidebar-brand-sub" wrapText="true"/>
 
     <VBox alignment="CENTER_LEFT" spacing="2" styleClass="sidebar-user-box">
         <Label fx:id="userNameLabel" text="Petani" styleClass="sidebar-user-name"/>
@@ -24,11 +24,11 @@
 
     <Separator/>
 
-    <Button text="Beranda (Dashboard)" maxWidth="Infinity" styleClass="sidebar-button" onAction="#goToDashboard"/>
-    <Button text="Pengajuan Pupuk Subsidi" maxWidth="Infinity" styleClass="sidebar-button" onAction="#goToPengajuanPupuk"/>
-    <Button text="Lapor Gagal Panen" maxWidth="Infinity" styleClass="sidebar-button" onAction="#goToLaporGagalPanen"/>
-    <Button text="Status Pengajuan" maxWidth="Infinity" styleClass="sidebar-button" onAction="#goToStatusPengajuan"/>
-    <Button text="Profil" maxWidth="Infinity" styleClass="sidebar-button" onAction="#goToProfil"/>
+    <Button fx:id="btnDashboard" text="Beranda Petani" maxWidth="Infinity" styleClass="sidebar-button" onAction="#goToDashboard"/>
+    <Button fx:id="btnPengajuan" text="Pengajuan Pupuk Subsidi" maxWidth="Infinity" styleClass="sidebar-button" onAction="#goToPengajuanPupuk"/>
+    <Button fx:id="btnLapor" text="Lapor Gagal Panen" maxWidth="Infinity" styleClass="sidebar-button" onAction="#goToLaporGagalPanen"/>
+    <Button fx:id="btnStatus" text="Status Pengajuan" maxWidth="Infinity" styleClass="sidebar-button" onAction="#goToStatusPengajuan"/>
+    <Button fx:id="btnProfil" text="Profil" maxWidth="Infinity" styleClass="sidebar-button" onAction="#goToProfil"/>
 
     <VBox VBox.vgrow="ALWAYS"/>
 

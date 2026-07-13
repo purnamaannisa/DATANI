@@ -35,6 +35,10 @@
             <Label text="Pilih salah satu pengajuan pada daftar untuk melihat detail lengkap dan melakukan verifikasi."
                    styleClass="page-subtitle" wrapText="true"/>
 
+            <HBox spacing="10" alignment="CENTER_LEFT">
+                <Label text="&#128269;" styleClass="field-label"/>
+                <javafx.scene.control.TextField fx:id="searchNikField" promptText="Cari berdasarkan NIK" prefWidth="220" styleClass="input-field"/>
+            </HBox>
             <Region prefHeight="16"/>
 
             <SplitPane fx:id="masterDetailSplit" dividerPositions="0.52" VBox.vgrow="ALWAYS" styleClass="master-detail-split">
@@ -42,8 +46,12 @@
                 <!-- ===== MASTER: Daftar Pengajuan ===== -->
                 <VBox spacing="0" styleClass="master-pane">
                     <TableView fx:id="pengajuanTable" VBox.vgrow="ALWAYS" styleClass="data-table">
+                        <columnResizePolicy>
+                            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY"/>
+                        </columnResizePolicy>
                         <columns>
                             <TableColumn fx:id="idColumn" text="ID" prefWidth="60"/>
+                            <TableColumn fx:id="nikColumn" text="NIK Petani" prefWidth="120"/>
                             <TableColumn fx:id="namaPetaniColumn" text="Nama Petani" prefWidth="160"/>
                             <TableColumn fx:id="jenisTanamanColumn" text="Jenis Tanaman" prefWidth="130"/>
                             <TableColumn fx:id="luasLahanColumn" text="Luas Lahan" prefWidth="100"/>

@@ -20,17 +20,22 @@ public class LaporGagalPanenController {
 
     @FXML private ComboBox<String> lahanCombo;
     @FXML private ComboBox<String> penyebabCombo;
+    @FXML private ComboBox<String> satuanLuasCombo;
     @FXML private TextField luasField;
     @FXML private TextField kerusakanField;
     @FXML private DatePicker tanggalPicker;
-    @FXML private Label filePathLabel;
+    @FXML private Label fotoPlaceholder;
     @FXML private ImageView previewImage;
 
     private File fileFotoTerpilih;
 
     @FXML
     private void initialize() {
-        penyebabCombo.setItems(FXCollections.observableArrayList("Hama/Penyakit", "Kekeringan", "Banjir", "Bencana Alam"));
+        penyebabCombo.setItems(FXCollections.observableArrayList("Hama/Penyakit", "Kekeringan", "Banjir", "Bencana Alam", "Lainnya"));
+        penyebabCombo.setEditable(true);
+        
+        satuanLuasCombo.setItems(FXCollections.observableArrayList("Hektar", "Meter Persegi (m²)"));
+        satuanLuasCombo.getSelectionModel().selectFirst();
         
         // Ambil data lahan yang terdaftar & disetujui milik petani saat ini
         Petani petani = UserSession.getCurrentPetani();
@@ -49,12 +54,12 @@ public class LaporGagalPanenController {
     private void handleUploadFoto() {
         FileChooser chooser = new FileChooser();
         chooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("Gambar Lahan", "*.jpg", "*.jpeg", "*.png"));
-        File file = chooser.showOpenDialog(filePathLabel.getScene().getWindow());
+        File file = chooser.showOpenDialog(fotoPlaceholder.getScene().getWindow());
         if (file != null) {
             fileFotoTerpilih = file;
-            filePathLabel.setText(file.getName());
             previewImage.setImage(new Image(file.toURI().toString()));
             previewImage.setVisible(true);
+            fotoPlaceholder.setVisible(false);
         }
     }
 
@@ -62,7 +67,8 @@ public class LaporGagalPanenController {
     private void handleKirimLaporan() {
         String lahan = lahanCombo.getValue();
         String penyebab = penyebabCombo.getValue();
-        String luasStr = luasField.getText();
+        String luasStr = luasField.getText() == null ? "" : luasField.getText().trim();
+        luasStr = luasStr.replace(",", "."); // Ganti koma dengan titik untuk desimal
         String rusakStr = kerusakanField.getText();
         LocalDate tgl = tanggalPicker.getValue();
 
@@ -73,6 +79,12 @@ public class LaporGagalPanenController {
 
         try {
             double luas = Double.parseDouble(luasStr);
+            
+            // Konversi ke hektar jika satuan yang dipilih adalah Meter Persegi
+            if ("Meter Persegi (m²)".equals(satuanLuasCombo.getValue())) {
+                luas = luas / 10000.0;
+            }
+            
             int rusak = Integer.parseInt(rusakStr);
 
             if (luas <= 0 || rusak <= 0 || rusak > 100) {
@@ -104,8 +116,8 @@ public class LaporGagalPanenController {
             luasField.clear();
             kerusakanField.clear();
             tanggalPicker.setValue(null);
-            filePathLabel.setText("Belum ada berkas dipilih");
             previewImage.setVisible(false);
+            fotoPlaceholder.setVisible(true);
 
         } catch (NumberFormatException e) {
             showError("Format angka luas atau kerusakan tidak valid.");

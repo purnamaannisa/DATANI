@@ -39,7 +39,13 @@ public class VerifikasiPengajuanController {
     private TableView<Pengajuan> pengajuanTable;
 
     @FXML
+    private javafx.scene.control.TextField searchNikField;
+
+    @FXML
     private TableColumn<Pengajuan, Number> idColumn;
+
+    @FXML
+    private TableColumn<Pengajuan, String> nikColumn;
 
     @FXML
     private TableColumn<Pengajuan, String> namaPetaniColumn;
@@ -113,10 +119,11 @@ public class VerifikasiPengajuanController {
     @FXML
     private void initialize() {
         idColumn.setCellValueFactory(data -> new javafx.beans.property.SimpleIntegerProperty(data.getValue().getId()));
+        nikColumn.setCellValueFactory(data -> new SimpleStringProperty(DataService.getNikPetaniById(data.getValue().getPetaniId())));
         namaPetaniColumn.setCellValueFactory(data ->
                 new SimpleStringProperty(DataService.getNamaPetaniById(data.getValue().getPetaniId())));
         jenisTanamanColumn.setCellValueFactory(data -> new SimpleStringProperty(data.getValue().getJenisTanaman()));
-        luasLahanColumn.setCellValueFactory(data -> new SimpleStringProperty(data.getValue().getLuasLahan() + " ha"));
+        luasLahanColumn.setCellValueFactory(data -> new SimpleStringProperty(String.format("%.2f ha", data.getValue().getLuasLahan())));
         tanggalPengajuanColumn.setCellValueFactory(data ->
                 new SimpleStringProperty(data.getValue().getTanggalPengajuan().format(DATE_FORMAT)));
 
@@ -124,13 +131,28 @@ public class VerifikasiPengajuanController {
             pengajuanTerpilih = newValue;
             tampilkanDetail(newValue);
         });
+        
+        searchNikField.textProperty().addListener((obs, oldValue, newValue) -> refreshTable());
 
         refreshTable();
         showEmptyState();
     }
 
     private void refreshTable() {
-        pengajuanTable.setItems(DataService.getPengajuanMenungguVerifikasi());
+        String searchNik = searchNikField.getText() == null ? "" : searchNikField.getText().trim();
+        java.util.Optional<com.datani.model.Petani> searchedPetani = java.util.Optional.empty();
+        if (!searchNik.isEmpty()) {
+            searchedPetani = DataService.getPetaniByNik(searchNik);
+        }
+        final Integer searchedPetaniId = searchedPetani.map(com.datani.model.Petani::getId).orElse(null);
+
+        java.util.List<Pengajuan> pList = new java.util.ArrayList<>();
+        for (Pengajuan p : DataService.getPengajuanMenungguVerifikasi()) {
+            if (searchNik.isEmpty() || (searchedPetaniId != null && p.getPetaniId() == searchedPetaniId)) {
+                pList.add(p);
+            }
+        }
+        pengajuanTable.setItems(javafx.collections.FXCollections.observableArrayList(pList));
     }
 
     private void showEmptyState() {
@@ -167,7 +189,7 @@ public class VerifikasiPengajuanController {
             detailKelompokTaniLabel.setText(petani.getKelompokTani());
         }
 
-        detailLuasLahanLabel.setText(pengajuan.getLuasLahan() + " ha");
+        detailLuasLahanLabel.setText(String.format("%.2f ha", pengajuan.getLuasLahan()));
         detailStatusKepemilikanLabel.setText(pengajuan.getStatusKepemilikan());
         detailJenisTanamanLabel.setText(pengajuan.getJenisTanaman());
 

@@ -19,12 +19,27 @@ public class PetaniSidebarController {
     @FXML
     private Label userRoleLabel;
 
+    @FXML private javafx.scene.control.Button btnDashboard;
+    @FXML private javafx.scene.control.Button btnPengajuan;
+    @FXML private javafx.scene.control.Button btnLapor;
+    @FXML private javafx.scene.control.Button btnStatus;
+    @FXML private javafx.scene.control.Button btnProfil;
+
     @FXML
     private void initialize() {
         if (UserSession.getCurrentPetani() != null) {
             userNameLabel.setText(UserSession.getCurrentPetani().getNamaLengkap());
         }
         userRoleLabel.setText("Petani");
+
+        String fxml = NavigationManager.getCurrentFxml();
+        if (fxml != null) {
+            if (fxml.endsWith("DashboardPetani.fxml")) btnDashboard.getStyleClass().add("active");
+            else if (fxml.endsWith("PengajuanPupuk.fxml")) btnPengajuan.getStyleClass().add("active");
+            else if (fxml.endsWith("LaporGagalPanen.fxml")) btnLapor.getStyleClass().add("active");
+            else if (fxml.endsWith("StatusPengajuan.fxml")) btnStatus.getStyleClass().add("active");
+            else if (fxml.endsWith("ProfilPetani.fxml")) btnProfil.getStyleClass().add("active");
+        }
     }
 
     @FXML

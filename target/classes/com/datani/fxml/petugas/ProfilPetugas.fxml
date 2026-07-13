@@ -26,7 +26,7 @@
             <Label text="Profil" styleClass="page-title"/>
             <Label text="Kelola data akun Petugas BPP Anda." styleClass="page-subtitle"/>
 
-            <VBox spacing="14" maxWidth="440" styleClass="profile-card">
+            <VBox spacing="14" maxWidth="Infinity" styleClass="profile-card">
                 <padding>
                     <Insets top="20" right="20" bottom="20" left="20"/>
                 </padding>
@@ -38,17 +38,17 @@
 
                 <VBox spacing="4">
                     <Label text="Nama Lengkap" styleClass="field-label"/>
-                    <TextField fx:id="namaLengkapField" editable="false"/>
+                    <TextField fx:id="namaLengkapField" editable="false" styleClass="input-field"/>
                 </VBox>
 
                 <VBox spacing="4">
                     <Label text="Email" styleClass="field-label"/>
-                    <TextField fx:id="emailField" editable="false"/>
+                    <TextField fx:id="emailField" editable="false" styleClass="input-field"/>
                 </VBox>
 
                 <VBox spacing="4">
                     <Label text="Nomor HP" styleClass="field-label"/>
-                    <TextField fx:id="nomorHPField" editable="false"/>
+                    <TextField fx:id="nomorHPField" editable="false" styleClass="input-field"/>
                 </VBox>
 
                 <Button fx:id="editProfilButton" text="Edit Profil" styleClass="primary-button" onAction="#handleEditProfil"/>

@@ -3,7 +3,7 @@
     <id>1</id>
     <petaniId>1</petaniId>
     <petaniNama>Budi Santoso</petaniNama>
-    <penyebab>Hama/Penyakit</penyebab>
+    <penyebab>Banjir</penyebab>
     <luasTerdampak>0.5</luasTerdampak>
     <persentaseKerusakan>70</persentaseKerusakan>
     <tanggalKejadian>2026-07-06</tanggalKejadian>
@@ -18,7 +18,7 @@
     <petaniId>1</petaniId>
     <petaniNama>Budi Santoso</petaniNama>
     <penyebab>Bencana Alam</penyebab>
-    <luasTerdampak>200.0</luasTerdampak>
+    <luasTerdampak>2.0</luasTerdampak>
     <persentaseKerusakan>60</persentaseKerusakan>
     <tanggalKejadian>2026-07-08</tanggalKejadian>
     <fotoBukti>C:\Users\apa67\Pictures\foto saya.jpeg</fotoBukti>
@@ -32,7 +32,7 @@
     <petaniId>4</petaniId>
     <petaniNama>nisa</petaniNama>
     <penyebab>Kekeringan</penyebab>
-    <luasTerdampak>200.0</luasTerdampak>
+    <luasTerdampak>2.0</luasTerdampak>
     <persentaseKerusakan>70</persentaseKerusakan>
     <tanggalKejadian>2026-07-04</tanggalKejadian>
     <fotoBukti>C:\Users\apa67\Pictures\rpl kuliah umum\WhatsApp Image 2026-06-30 at 11.53.30.jpeg</fotoBukti>
@@ -46,13 +46,302 @@
     <petaniId>4</petaniId>
     <petaniNama>nisa</petaniNama>
     <penyebab>Banjir</penyebab>
-    <luasTerdampak>80.0</luasTerdampak>
+    <luasTerdampak>2.0</luasTerdampak>
     <persentaseKerusakan>90</persentaseKerusakan>
     <tanggalKejadian>2026-07-01</tanggalKejadian>
     <fotoBukti>C:\Users\apa67\Pictures\foto saya.jpeg</fotoBukti>
     <status>Terverifikasi</status>
     <catatanRekomendasi>kkkkkkklklklklklklklklkjkljhjkjhgfdsdfghkl6ytrgyujhrt</catatanRekomendasi>
     <tanggalVerifikasi>2026-07-12</tanggalVerifikasi>
+    <verifikatorUsername>petugas</verifikatorUsername>
+  </com.datani.model.LaporanGagalPanen>
+  <com.datani.model.LaporanGagalPanen>
+    <id>5</id>
+    <petaniId>7</petaniId>
+    <petaniNama>Budi</petaniNama>
+    <penyebab>Banjir</penyebab>
+    <luasTerdampak>1.0</luasTerdampak>
+    <persentaseKerusakan>50</persentaseKerusakan>
+    <tanggalKejadian>2026-07-08</tanggalKejadian>
+    <fotoBukti>C:\Users\apa67\Pictures\foto saya.jpeg</fotoBukti>
+    <status>Terverifikasi</status>
+    <catatanRekomendasi>huhuhuhuhuhuhu</catatanRekomendasi>
+    <tanggalVerifikasi>2026-07-12</tanggalVerifikasi>
+    <verifikatorUsername>petugas</verifikatorUsername>
+  </com.datani.model.LaporanGagalPanen>
+  <com.datani.model.LaporanGagalPanen>
+    <id>6</id>
+    <petaniId>6</petaniId>
+    <petaniNama>Annisa</petaniNama>
+    <penyebab>Kekeringan</penyebab>
+    <luasTerdampak>1.0764969131028725</luasTerdampak>
+    <persentaseKerusakan>73</persentaseKerusakan>
+    <tanggalKejadian>2026-07-07</tanggalKejadian>
+    <fotoBukti>sample-photos/damage.jpg</fotoBukti>
+    <status>Menunggu Peninjauan</status>
+  </com.datani.model.LaporanGagalPanen>
+  <com.datani.model.LaporanGagalPanen>
+    <id>7</id>
+    <petaniId>11</petaniId>
+    <petaniNama>Siti Wibowo</petaniNama>
+    <penyebab>Gagal Benih</penyebab>
+    <luasTerdampak>1.1703630271210055</luasTerdampak>
+    <persentaseKerusakan>85</persentaseKerusakan>
+    <tanggalKejadian>2026-07-08</tanggalKejadian>
+    <fotoBukti>sample-photos/damage.jpg</fotoBukti>
+    <status>Terverifikasi</status>
+    <catatanRekomendasi>Disetujui</catatanRekomendasi>
+    <tanggalVerifikasi>2026-07-13</tanggalVerifikasi>
+    <verifikatorUsername>petugas</verifikatorUsername>
+  </com.datani.model.LaporanGagalPanen>
+  <com.datani.model.LaporanGagalPanen>
+    <id>8</id>
+    <petaniId>16</petaniId>
+    <petaniNama>Budi Putri</petaniNama>
+    <penyebab>Kekeringan</penyebab>
+    <luasTerdampak>0.8205775176332557</luasTerdampak>
+    <persentaseKerusakan>86</persentaseKerusakan>
+    <tanggalKejadian>2026-07-06</tanggalKejadian>
+    <fotoBukti>sample-photos/damage.jpg</fotoBukti>
+    <status>Menunggu Peninjauan</status>
+  </com.datani.model.LaporanGagalPanen>
+  <com.datani.model.LaporanGagalPanen>
+    <id>9</id>
+    <petaniId>21</petaniId>
+    <petaniNama>Fajar Hidayat</petaniNama>
+    <penyebab>Gagal Benih</penyebab>
+    <luasTerdampak>1.1205735809658484</luasTerdampak>
+    <persentaseKerusakan>50</persentaseKerusakan>
+    <tanggalKejadian>2026-07-09</tanggalKejadian>
+    <fotoBukti>sample-photos/damage.jpg</fotoBukti>
+    <status>Terverifikasi</status>
+    <catatanRekomendasi>Disetujui</catatanRekomendasi>
+    <tanggalVerifikasi>2026-07-13</tanggalVerifikasi>
+    <verifikatorUsername>petugas</verifikatorUsername>
+  </com.datani.model.LaporanGagalPanen>
+  <com.datani.model.LaporanGagalPanen>
+    <id>10</id>
+    <petaniId>26</petaniId>
+    <petaniNama>Joko Santoso</petaniNama>
+    <penyebab>Gagal Benih</penyebab>
+    <luasTerdampak>1.0696532621451196</luasTerdampak>
+    <persentaseKerusakan>89</persentaseKerusakan>
+    <tanggalKejadian>2026-07-03</tanggalKejadian>
+    <fotoBukti>sample-photos/damage.jpg</fotoBukti>
+    <status>Menunggu Peninjauan</status>
+  </com.datani.model.LaporanGagalPanen>
+  <com.datani.model.LaporanGagalPanen>
+    <id>11</id>
+    <petaniId>31</petaniId>
+    <petaniNama>Siti Santoso</petaniNama>
+    <penyebab>Hama/Penyakit</penyebab>
+    <luasTerdampak>0.5868463389869341</luasTerdampak>
+    <persentaseKerusakan>74</persentaseKerusakan>
+    <tanggalKejadian>2026-07-04</tanggalKejadian>
+    <fotoBukti>sample-photos/damage.jpg</fotoBukti>
+    <status>Terverifikasi</status>
+    <catatanRekomendasi>Disetujui</catatanRekomendasi>
+    <tanggalVerifikasi>2026-07-13</tanggalVerifikasi>
+    <verifikatorUsername>petugas</verifikatorUsername>
+  </com.datani.model.LaporanGagalPanen>
+  <com.datani.model.LaporanGagalPanen>
+    <id>12</id>
+    <petaniId>36</petaniId>
+    <petaniNama>Rina Nugroho</petaniNama>
+    <penyebab>Cuaca Ekstrem</penyebab>
+    <luasTerdampak>0.2506521965258905</luasTerdampak>
+    <persentaseKerusakan>61</persentaseKerusakan>
+    <tanggalKejadian>2026-07-08</tanggalKejadian>
+    <fotoBukti>sample-photos/damage.jpg</fotoBukti>
+    <status>Menunggu Peninjauan</status>
+  </com.datani.model.LaporanGagalPanen>
+  <com.datani.model.LaporanGagalPanen>
+    <id>13</id>
+    <petaniId>41</petaniId>
+    <petaniNama>Iwan Pratama</petaniNama>
+    <penyebab>Gagal Benih</penyebab>
+    <luasTerdampak>0.2521844319930195</luasTerdampak>
+    <persentaseKerusakan>55</persentaseKerusakan>
+    <tanggalKejadian>2026-07-10</tanggalKejadian>
+    <fotoBukti>sample-photos/damage.jpg</fotoBukti>
+    <status>Terverifikasi</status>
+    <catatanRekomendasi>Disetujui</catatanRekomendasi>
+    <tanggalVerifikasi>2026-07-13</tanggalVerifikasi>
+    <verifikatorUsername>petugas</verifikatorUsername>
+  </com.datani.model.LaporanGagalPanen>
+  <com.datani.model.LaporanGagalPanen>
+    <id>14</id>
+    <petaniId>46</petaniId>
+    <petaniNama>Siti Santoso</petaniNama>
+    <penyebab>Cuaca Ekstrem</penyebab>
+    <luasTerdampak>0.8817259569017317</luasTerdampak>
+    <persentaseKerusakan>82</persentaseKerusakan>
+    <tanggalKejadian>2026-07-05</tanggalKejadian>
+    <fotoBukti>sample-photos/damage.jpg</fotoBukti>
+    <status>Menunggu Peninjauan</status>
+  </com.datani.model.LaporanGagalPanen>
+  <com.datani.model.LaporanGagalPanen>
+    <id>15</id>
+    <petaniId>51</petaniId>
+    <petaniNama>Hadi Nugroho</petaniNama>
+    <penyebab>Cuaca Ekstrem</penyebab>
+    <luasTerdampak>0.6227306907017145</luasTerdampak>
+    <persentaseKerusakan>92</persentaseKerusakan>
+    <tanggalKejadian>2026-07-05</tanggalKejadian>
+    <fotoBukti>sample-photos/damage.jpg</fotoBukti>
+    <status>Terverifikasi</status>
+    <catatanRekomendasi>Disetujui</catatanRekomendasi>
+    <tanggalVerifikasi>2026-07-13</tanggalVerifikasi>
+    <verifikatorUsername>petugas</verifikatorUsername>
+  </com.datani.model.LaporanGagalPanen>
+  <com.datani.model.LaporanGagalPanen>
+    <id>16</id>
+    <petaniId>56</petaniId>
+    <petaniNama>Dedi Sari</petaniNama>
+    <penyebab>Banjir</penyebab>
+    <luasTerdampak>0.21478606436179132</luasTerdampak>
+    <persentaseKerusakan>85</persentaseKerusakan>
+    <tanggalKejadian>2026-07-11</tanggalKejadian>
+    <fotoBukti>sample-photos/damage.jpg</fotoBukti>
+    <status>Menunggu Peninjauan</status>
+  </com.datani.model.LaporanGagalPanen>
+  <com.datani.model.LaporanGagalPanen>
+    <id>17</id>
+    <petaniId>61</petaniId>
+    <petaniNama>Gunawan Santoso</petaniNama>
+    <penyebab>Banjir</penyebab>
+    <luasTerdampak>0.7278845593825214</luasTerdampak>
+    <persentaseKerusakan>63</persentaseKerusakan>
+    <tanggalKejadian>2026-07-10</tanggalKejadian>
+    <fotoBukti>sample-photos/damage.jpg</fotoBukti>
+    <status>Terverifikasi</status>
+    <catatanRekomendasi>Disetujui</catatanRekomendasi>
+    <tanggalVerifikasi>2026-07-13</tanggalVerifikasi>
+    <verifikatorUsername>petugas</verifikatorUsername>
+  </com.datani.model.LaporanGagalPanen>
+  <com.datani.model.LaporanGagalPanen>
+    <id>18</id>
+    <petaniId>66</petaniId>
+    <petaniNama>Lestari Nugroho</petaniNama>
+    <penyebab>Gagal Benih</penyebab>
+    <luasTerdampak>1.0058955244754235</luasTerdampak>
+    <persentaseKerusakan>64</persentaseKerusakan>
+    <tanggalKejadian>2026-07-09</tanggalKejadian>
+    <fotoBukti>sample-photos/damage.jpg</fotoBukti>
+    <status>Menunggu Peninjauan</status>
+  </com.datani.model.LaporanGagalPanen>
+  <com.datani.model.LaporanGagalPanen>
+    <id>19</id>
+    <petaniId>71</petaniId>
+    <petaniNama>Joko Putri</petaniNama>
+    <penyebab>Gagal Benih</penyebab>
+    <luasTerdampak>0.39198248658847773</luasTerdampak>
+    <persentaseKerusakan>61</persentaseKerusakan>
+    <tanggalKejadian>2026-07-03</tanggalKejadian>
+    <fotoBukti>sample-photos/damage.jpg</fotoBukti>
+    <status>Terverifikasi</status>
+    <catatanRekomendasi>Disetujui</catatanRekomendasi>
+    <tanggalVerifikasi>2026-07-13</tanggalVerifikasi>
+    <verifikatorUsername>petugas</verifikatorUsername>
+  </com.datani.model.LaporanGagalPanen>
+  <com.datani.model.LaporanGagalPanen>
+    <id>20</id>
+    <petaniId>76</petaniId>
+    <petaniNama>Lestari Wibowo</petaniNama>
+    <penyebab>Banjir</penyebab>
+    <luasTerdampak>0.5314452124116764</luasTerdampak>
+    <persentaseKerusakan>91</persentaseKerusakan>
+    <tanggalKejadian>2026-07-08</tanggalKejadian>
+    <fotoBukti>sample-photos/damage.jpg</fotoBukti>
+    <status>Menunggu Peninjauan</status>
+  </com.datani.model.LaporanGagalPanen>
+  <com.datani.model.LaporanGagalPanen>
+    <id>21</id>
+    <petaniId>81</petaniId>
+    <petaniNama>Hadi Sari</petaniNama>
+    <penyebab>Gagal Benih</penyebab>
+    <luasTerdampak>0.7228843849920144</luasTerdampak>
+    <persentaseKerusakan>66</persentaseKerusakan>
+    <tanggalKejadian>2026-07-11</tanggalKejadian>
+    <fotoBukti>sample-photos/damage.jpg</fotoBukti>
+    <status>Terverifikasi</status>
+    <catatanRekomendasi>Disetujui</catatanRekomendasi>
+    <tanggalVerifikasi>2026-07-13</tanggalVerifikasi>
+    <verifikatorUsername>petugas</verifikatorUsername>
+  </com.datani.model.LaporanGagalPanen>
+  <com.datani.model.LaporanGagalPanen>
+    <id>22</id>
+    <petaniId>86</petaniId>
+    <petaniNama>Joko Nugroho</petaniNama>
+    <penyebab>Cuaca Ekstrem</penyebab>
+    <luasTerdampak>1.020140408623898</luasTerdampak>
+    <persentaseKerusakan>58</persentaseKerusakan>
+    <tanggalKejadian>2026-07-07</tanggalKejadian>
+    <fotoBukti>sample-photos/damage.jpg</fotoBukti>
+    <status>Menunggu Peninjauan</status>
+  </com.datani.model.LaporanGagalPanen>
+  <com.datani.model.LaporanGagalPanen>
+    <id>23</id>
+    <petaniId>91</petaniId>
+    <petaniNama>Siti Pratama</petaniNama>
+    <penyebab>Cuaca Ekstrem</penyebab>
+    <luasTerdampak>0.9429823205332637</luasTerdampak>
+    <persentaseKerusakan>97</persentaseKerusakan>
+    <tanggalKejadian>2026-07-11</tanggalKejadian>
+    <fotoBukti>sample-photos/damage.jpg</fotoBukti>
+    <status>Terverifikasi</status>
+    <catatanRekomendasi>Disetujui</catatanRekomendasi>
+    <tanggalVerifikasi>2026-07-13</tanggalVerifikasi>
+    <verifikatorUsername>petugas</verifikatorUsername>
+  </com.datani.model.LaporanGagalPanen>
+  <com.datani.model.LaporanGagalPanen>
+    <id>24</id>
+    <petaniId>96</petaniId>
+    <petaniNama>Eko Santoso</petaniNama>
+    <penyebab>Gagal Benih</penyebab>
+    <luasTerdampak>1.145670550669237</luasTerdampak>
+    <persentaseKerusakan>61</persentaseKerusakan>
+    <tanggalKejadian>2026-07-09</tanggalKejadian>
+    <fotoBukti>sample-photos/damage.jpg</fotoBukti>
+    <status>Menunggu Peninjauan</status>
+  </com.datani.model.LaporanGagalPanen>
+  <com.datani.model.LaporanGagalPanen>
+    <id>25</id>
+    <petaniId>101</petaniId>
+    <petaniNama>Fajar Kusuma</petaniNama>
+    <penyebab>Gagal Benih</penyebab>
+    <luasTerdampak>0.9031558005422788</luasTerdampak>
+    <persentaseKerusakan>86</persentaseKerusakan>
+    <tanggalKejadian>2026-07-05</tanggalKejadian>
+    <fotoBukti>sample-photos/damage.jpg</fotoBukti>
+    <status>Terverifikasi</status>
+    <catatanRekomendasi>Disetujui</catatanRekomendasi>
+    <tanggalVerifikasi>2026-07-13</tanggalVerifikasi>
+    <verifikatorUsername>petugas</verifikatorUsername>
+  </com.datani.model.LaporanGagalPanen>
+  <com.datani.model.LaporanGagalPanen>
+    <id>26</id>
+    <petaniId>106</petaniId>
+    <petaniNama>Siti Putri</petaniNama>
+    <penyebab>Gagal Benih</penyebab>
+    <luasTerdampak>0.6102099924485203</luasTerdampak>
+    <persentaseKerusakan>76</persentaseKerusakan>
+    <tanggalKejadian>2026-07-12</tanggalKejadian>
+    <fotoBukti>sample-photos/damage.jpg</fotoBukti>
+    <status>Menunggu Peninjauan</status>
+  </com.datani.model.LaporanGagalPanen>
+  <com.datani.model.LaporanGagalPanen>
+    <id>27</id>
+    <petaniId>7</petaniId>
+    <petaniNama>Budi</petaniNama>
+    <penyebab>Kekeringan</penyebab>
+    <luasTerdampak>0.02</luasTerdampak>
+    <persentaseKerusakan>50</persentaseKerusakan>
+    <tanggalKejadian>2026-07-10</tanggalKejadian>
+    <fotoBukti>C:\Users\apa67\Pictures\gambar candi.jpg</fotoBukti>
+    <status>Terverifikasi</status>
+    <catatanRekomendasi>silahkan datang ke blablabla</catatanRekomendasi>
+    <tanggalVerifikasi>2026-07-13</tanggalVerifikasi>
     <verifikatorUsername>petugas</verifikatorUsername>
   </com.datani.model.LaporanGagalPanen>
 </list>
