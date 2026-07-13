@@ -39,7 +39,16 @@ public class RegisterController {
     private PasswordField passwordField;
 
     @FXML
+    private TextField passwordVisibleField;
+
+    @FXML
     private PasswordField konfirmasiPasswordField;
+
+    @FXML
+    private TextField konfirmasiPasswordVisibleField;
+
+    @FXML
+    private javafx.scene.control.CheckBox showPasswordCheck;
 
     @FXML
     private Label errorLabel;
@@ -48,6 +57,25 @@ public class RegisterController {
     private void initialize() {
         errorLabel.setVisible(false);
         errorLabel.setManaged(false);
+
+        // Binding teks sandi
+        passwordVisibleField.textProperty().bindBidirectional(passwordField.textProperty());
+        konfirmasiPasswordVisibleField.textProperty().bindBidirectional(konfirmasiPasswordField.textProperty());
+
+        // Toggle visibilitas
+        showPasswordCheck.selectedProperty().addListener((obs, oldVal, newVal) -> {
+            passwordField.setVisible(!newVal);
+            passwordField.setManaged(!newVal);
+            passwordVisibleField.setVisible(newVal);
+            passwordVisibleField.setManaged(newVal);
+
+            konfirmasiPasswordField.setVisible(!newVal);
+            konfirmasiPasswordField.setManaged(!newVal);
+            konfirmasiPasswordVisibleField.setVisible(newVal);
+            konfirmasiPasswordVisibleField.setManaged(newVal);
+
+            showPasswordCheck.setText(newVal ? "Sembunyikan kata sandi" : "Tampilkan kata sandi");
+        });
 
         // Batasi input NIK hanya angka, maksimum 16 digit.
         restrictToDigits(nikField, 16);

@@ -58,6 +58,9 @@ public class PengajuanPupukController {
     private TextField luasLahanField;
 
     @FXML
+    private ComboBox<String> satuanLuasCombo;
+
+    @FXML
     private ComboBox<String> statusKepemilikanCombo;
 
     @FXML
@@ -67,12 +70,14 @@ public class PengajuanPupukController {
     private ImageView fotoLahanPreview;
 
     @FXML
-    private Label fotoLahanFileNameLabel;
+    private Label fotoLahanPlaceholder;
 
     @FXML
     private Label errorLabel;
 
     private String fotoLahanPath;
+
+    private Pengajuan pengajuanDitolak;
 
     @FXML
     private void initialize() {
@@ -81,9 +86,38 @@ public class PengajuanPupukController {
 
         statusKepemilikanCombo.setItems(FXCollections.observableArrayList("Milik Sendiri", "Sewa"));
         jenisTanamanCombo.setItems(FXCollections.observableArrayList(
-                "Padi", "Jagung", "Kedelai", "Cabai", "Bawang", "Tebu", "Kopi", "Kakao", "Lainnya"));
+                "Padi", "Jagung", "Kedelai", "Cabai", "Bawang", "Tebu", "Kopi", "Kakao"));
+        jenisTanamanCombo.setEditable(false);
+
+        satuanLuasCombo.setItems(FXCollections.observableArrayList("Hektar", "Meter Persegi (m²)"));
+        satuanLuasCombo.getSelectionModel().selectFirst();
 
         muatDataPetani();
+        
+        // Cek apakah ada pengajuan yang ditolak untuk diedit
+        Petani petani = UserSession.getCurrentPetani();
+        if (petani != null) {
+            for (Pengajuan p : DataService.getPengajuanByPetaniId(petani.getId())) {
+                if (p.getStatus() == StatusPengajuan.DITOLAK) {
+                    pengajuanDitolak = p;
+                    break;
+                }
+            }
+        }
+        
+        if (pengajuanDitolak != null) {
+            luasLahanField.setText(String.valueOf(pengajuanDitolak.getLuasLahan()));
+            satuanLuasCombo.getSelectionModel().select("Hektar");
+            statusKepemilikanCombo.getSelectionModel().select(pengajuanDitolak.getStatusKepemilikan());
+            jenisTanamanCombo.getSelectionModel().select(pengajuanDitolak.getJenisTanaman());
+            fotoLahanPath = pengajuanDitolak.getFotoLahan();
+            if (fotoLahanPath != null && new File(fotoLahanPath).exists()) {
+                fotoLahanPreview.setImage(new Image(new File(fotoLahanPath).toURI().toString()));
+                fotoLahanPlaceholder.setVisible(false);
+            }
+            showError("Anda memiliki pengajuan yang ditolak. Silakan perbaiki data di bawah ini.");
+            errorLabel.setStyle("-fx-text-fill: #e67e22; -fx-background-color: #fdf2e9; -fx-padding: 8px; -fx-border-radius: 4px; -fx-background-radius: 4px;");
+        }
     }
 
     private void muatDataPetani() {
@@ -110,10 +144,10 @@ public class PengajuanPupukController {
         if (file == null) {
             return;
         }
-        fotoLahanPath = file.getAbsolutePath();
-        fotoLahanFileNameLabel.setText(file.getName());
         try {
+            fotoLahanPath = file.getAbsolutePath();
             fotoLahanPreview.setImage(new Image(file.toURI().toString()));
+            fotoLahanPlaceholder.setVisible(false);
         } catch (Exception e) {
             fotoLahanPreview.setImage(null);
             showError("Foto tidak dapat dimuat. Pastikan berkas berformat JPG, JPEG, atau PNG.");
@@ -129,15 +163,28 @@ public class PengajuanPupukController {
         }
 
         String luasLahanText = luasLahanField.getText() == null ? "" : luasLahanField.getText().trim();
+        // Ganti koma dengan titik untuk desimal
+        luasLahanText = luasLahanText.replace(",", ".");
+        
         double luasLahan;
         try {
             luasLahan = Double.parseDouble(luasLahanText);
+            
+            // Konversi ke hektar jika satuan yang dipilih adalah Meter Persegi
+            if ("Meter Persegi (m²)".equals(satuanLuasCombo.getValue())) {
+                luasLahan = luasLahan / 10000.0;
+            }
+            
             if (luasLahan <= 0) {
                 showError("Luas Lahan harus lebih besar dari 0.");
                 return;
             }
+            if (luasLahan > 2.0) {
+                showError("Batas maksimal pengajuan pupuk subsidi adalah 2 hektar sesuai ketentuan.");
+                return;
+            }
         } catch (NumberFormatException e) {
-            showError("Luas Lahan harus berupa angka yang valid (dalam hektar).");
+            showError("Luas Lahan harus berupa angka yang valid.");
             return;
         }
 
@@ -158,26 +205,44 @@ public class PengajuanPupukController {
             return;
         }
 
-        int newId = DataService.getNextPengajuanId();
-        Pengajuan pengajuan = new Pengajuan(
-                newId,
-                petani.getId(),
-                luasLahan,
-                statusKepemilikan,
-                jenisTanaman,
-                fotoLahanPath,
-                StatusPengajuan.MENUNGGU_VERIFIKASI,
-                null,
-                LocalDate.now(),
-                null
-        );
-        DataService.addPengajuan(pengajuan);
+        if (this.pengajuanDitolak != null) {
+            pengajuanDitolak.setLuasLahan(luasLahan);
+            pengajuanDitolak.setStatusKepemilikan(statusKepemilikan);
+            pengajuanDitolak.setJenisTanaman(jenisTanaman);
+            pengajuanDitolak.setFotoLahan(fotoLahanPath);
+            pengajuanDitolak.setStatus(StatusPengajuan.MENUNGGU_VERIFIKASI);
+            pengajuanDitolak.setTanggalPengajuan(LocalDate.now());
+            pengajuanDitolak.setAlasanPenolakan(null);
+            
+            DataService.updatePengajuan(pengajuanDitolak);
+            
+            Alert alert = new Alert(AlertType.INFORMATION);
+            alert.setTitle("Pengajuan Diperbarui");
+            alert.setHeaderText(null);
+            alert.setContentText("Pengajuan #" + pengajuanDitolak.getId() + " berhasil diperbarui dan kembali berstatus \"Menunggu Verifikasi\".");
+            alert.showAndWait();
+        } else {
+            int newId = DataService.getNextPengajuanId();
+            Pengajuan pengajuan = new Pengajuan(
+                    newId,
+                    petani.getId(),
+                    luasLahan,
+                    statusKepemilikan,
+                    jenisTanaman,
+                    fotoLahanPath,
+                    StatusPengajuan.MENUNGGU_VERIFIKASI,
+                    null,
+                    LocalDate.now(),
+                    null
+            );
+            DataService.addPengajuan(pengajuan);
 
-        Alert alert = new Alert(AlertType.INFORMATION);
-        alert.setTitle("Pengajuan Terkirim");
-        alert.setHeaderText(null);
-        alert.setContentText("Pengajuan #" + newId + " berhasil dibuat dan berstatus \"Menunggu Verifikasi\".");
-        alert.showAndWait();
+            Alert alert = new Alert(AlertType.INFORMATION);
+            alert.setTitle("Pengajuan Terkirim");
+            alert.setHeaderText(null);
+            alert.setContentText("Pengajuan #" + newId + " berhasil dibuat dan berstatus \"Menunggu Verifikasi\".");
+            alert.showAndWait();
+        }
 
         clearForm();
         NavigationManager.navigateToStatusPengajuan();
@@ -185,11 +250,12 @@ public class PengajuanPupukController {
 
     private void clearForm() {
         luasLahanField.clear();
+        satuanLuasCombo.getSelectionModel().selectFirst();
         statusKepemilikanCombo.getSelectionModel().clearSelection();
         jenisTanamanCombo.getSelectionModel().clearSelection();
         fotoLahanPath = null;
         fotoLahanPreview.setImage(null);
-        fotoLahanFileNameLabel.setText("");
+        fotoLahanPlaceholder.setVisible(true);
         errorLabel.setVisible(false);
         errorLabel.setManaged(false);
     }

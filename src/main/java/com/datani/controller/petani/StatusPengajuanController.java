@@ -1,5 +1,6 @@
 package com.datani.controller.petani;
 
+import com.datani.model.LaporanGagalPanen;
 import com.datani.model.Pengajuan;
 import com.datani.service.DataService;
 import com.datani.session.UserSession;
@@ -53,6 +54,24 @@ public class StatusPengajuanController {
     private TableColumn<Pengajuan, Void> detailColumn;
 
     @FXML
+    private TableView<LaporanGagalPanen> gagalPanenTable;
+
+    @FXML
+    private TableColumn<LaporanGagalPanen, Number> gpIdColumn;
+
+    @FXML
+    private TableColumn<LaporanGagalPanen, String> gpTanggalColumn;
+
+    @FXML
+    private TableColumn<LaporanGagalPanen, String> gpKerusakanColumn;
+
+    @FXML
+    private TableColumn<LaporanGagalPanen, String> gpStatusColumn;
+
+    @FXML
+    private TableColumn<LaporanGagalPanen, Void> gpDetailColumn;
+
+    @FXML
     private void initialize() {
         idColumn.setCellValueFactory(data -> new javafx.beans.property.SimpleIntegerProperty(data.getValue().getId()));
         tanggalColumn.setCellValueFactory(data ->
@@ -65,10 +84,22 @@ public class StatusPengajuanController {
         statusColumn.setCellFactory(col -> statusStyledCell());
         detailColumn.setCellFactory(col -> detailButtonCell());
 
+        // Konfigurasi tabel Gagal Panen
+        gpIdColumn.setCellValueFactory(data -> new javafx.beans.property.SimpleIntegerProperty(data.getValue().getId()));
+        gpTanggalColumn.setCellValueFactory(data -> 
+                new SimpleStringProperty(data.getValue().getTanggalKejadian().format(DATE_FORMAT)));
+        gpKerusakanColumn.setCellValueFactory(data -> 
+                new SimpleStringProperty(data.getValue().getPersentaseKerusakan() + "%"));
+        gpStatusColumn.setCellValueFactory(data -> 
+                new SimpleStringProperty(data.getValue().getStatus()));
+        gpStatusColumn.setCellFactory(col -> gpStatusStyledCell());
+        gpDetailColumn.setCellFactory(col -> gpDetailButtonCell());
+
         if (UserSession.getCurrentPetani() != null) {
             int petaniId = UserSession.getCurrentPetani().getId();
             statusTable.setItems(DataService.getPengajuanByPetaniId(petaniId));
-            subtitleLabel.setText("Menampilkan pengajuan milik " + UserSession.getCurrentPetani().getNamaLengkap());
+            gagalPanenTable.setItems(DataService.getLaporanGagalPanenByPetani(petaniId));
+            subtitleLabel.setText("Menampilkan pengajuan dan laporan milik " + UserSession.getCurrentPetani().getNamaLengkap());
         }
     }
 
@@ -128,10 +159,80 @@ public class StatusPengajuanController {
         if (pengajuan.getStatus() == com.datani.model.StatusPengajuan.DITOLAK) {
             String alasan = pengajuan.getAlasanPenolakan();
             sb.append("Alasan Penolakan: ").append(alasan == null || alasan.trim().isEmpty() ? "-" : alasan).append("\n");
+        } else if (pengajuan.getStatus() == com.datani.model.StatusPengajuan.DISETUJUI) {
+            double urea = pengajuan.getLuasLahan() * 200;
+            double npk = pengajuan.getLuasLahan() * 300;
+            sb.append("\n=== Alokasi Pupuk Subsidi ===\n");
+            sb.append(String.format("Pupuk Urea (200kg/ha): %.1f kg\n", urea));
+            sb.append(String.format("Pupuk NPK (300kg/ha): %.1f kg\n", npk));
         }
 
         Alert alert = new Alert(AlertType.INFORMATION);
         alert.setTitle("Detail Pengajuan #" + pengajuan.getId());
+        alert.setHeaderText(null);
+        alert.setContentText(sb.toString());
+        alert.showAndWait();
+    }
+
+    private TableCell<LaporanGagalPanen, String> gpStatusStyledCell() {
+        return new TableCell<>() {
+            @Override
+            protected void updateItem(String value, boolean empty) {
+                super.updateItem(value, empty);
+                getStyleClass().removeAll("status-menunggu", "status-disetujui", "status-ditolak");
+                if (empty || value == null) {
+                    setText(null);
+                    return;
+                }
+                setText(value);
+                LaporanGagalPanen laporan = getTableView().getItems().get(getIndex());
+                switch (laporan.getStatus()) {
+                    case "Menunggu Peninjauan":
+                        getStyleClass().add("status-menunggu");
+                        break;
+                    case "Terverifikasi":
+                        getStyleClass().add("status-disetujui");
+                        break;
+                    case "Ditolak":
+                        getStyleClass().add("status-ditolak");
+                        break;
+                }
+            }
+        };
+    }
+
+    private TableCell<LaporanGagalPanen, Void> gpDetailButtonCell() {
+        return new TableCell<>() {
+            private final Button detailButton = new Button("Lihat Detail");
+
+            {
+                detailButton.getStyleClass().add("table-action-button");
+                detailButton.setOnAction(e -> tampilkanDetailGP(getTableView().getItems().get(getIndex())));
+            }
+
+            @Override
+            protected void updateItem(Void item, boolean empty) {
+                super.updateItem(item, empty);
+                setGraphic(empty ? null : detailButton);
+            }
+        };
+    }
+
+    private void tampilkanDetailGP(LaporanGagalPanen laporan) {
+        StringBuilder sb = new StringBuilder();
+        sb.append("ID Laporan: ").append(laporan.getId()).append("\n");
+        sb.append("Tanggal Kejadian: ").append(laporan.getTanggalKejadian().format(DATE_FORMAT)).append("\n");
+        sb.append("Tingkat Kerusakan: ").append(laporan.getPersentaseKerusakan()).append("%\n");
+        sb.append("Penyebab: ").append(laporan.getPenyebab()).append("\n");
+        sb.append("Status Verifikasi: ").append(laporan.getStatus()).append("\n");
+
+        if ("Ditolak".equals(laporan.getStatus()) || "Terverifikasi".equals(laporan.getStatus())) {
+            String catatan = laporan.getCatatanRekomendasi();
+            sb.append("Catatan: ").append(catatan == null || catatan.trim().isEmpty() ? "-" : catatan).append("\n");
+        }
+
+        Alert alert = new Alert(AlertType.INFORMATION);
+        alert.setTitle("Detail Laporan Gagal Panen #" + laporan.getId());
         alert.setHeaderText(null);
         alert.setContentText(sb.toString());
         alert.showAndWait();

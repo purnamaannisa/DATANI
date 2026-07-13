@@ -55,7 +55,10 @@
                 <!-- Right: Alokasi Pupuk 3 Tahun Terakhir -->
                 <VBox spacing="12" HBox.hgrow="ALWAYS" styleClass="dashboard-panel">
                     <Label text="Alokasi Pupuk 3 Tahun Terakhir" styleClass="section-title"/>
-                    <TableView fx:id="historisTable" VBox.vgrow="ALWAYS">
+                    <TableView fx:id="historisTable" VBox.vgrow="ALWAYS" styleClass="data-table">
+                        <columnResizePolicy>
+                            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY"/>
+                        </columnResizePolicy>
                         <columns>
                             <TableColumn fx:id="tahunColumn" text="Tahun" prefWidth="80"/>
                             <TableColumn fx:id="kuotaColumn" text="Alokasi Kuota (Kg)" prefWidth="150"/>
@@ -68,7 +71,10 @@
             <!-- Row 3: Riwayat Pengajuan Terbaru -->
             <VBox spacing="12" styleClass="dashboard-panel">
                 <Label text="Riwayat Pengajuan Terbaru" styleClass="section-title"/>
-                <TableView fx:id="recentTable" prefHeight="150">
+                <TableView fx:id="recentTable" prefHeight="200" styleClass="data-table">
+                    <columnResizePolicy>
+                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY"/>
+                    </columnResizePolicy>
                     <columns>
                         <TableColumn fx:id="idColumn" text="ID" prefWidth="50"/>
                         <TableColumn fx:id="luasLahanColumn" text="Luas Lahan" prefWidth="100"/>

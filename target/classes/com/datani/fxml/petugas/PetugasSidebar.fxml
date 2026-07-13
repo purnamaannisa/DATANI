@@ -11,11 +11,11 @@
       fx:controller="com.datani.controller.petugas.PetugasSidebarController"
       styleClass="sidebar" prefWidth="230" spacing="4">
     <padding>
-        <Insets top="24" right="12" bottom="24" left="12"/>
+        <Insets top="34" right="12" bottom="24" left="12"/>
     </padding>
 
     <Label text="DATANI" styleClass="sidebar-brand"/>
-    <Label text="Panel Petugas BPP" styleClass="sidebar-brand-sub"/>
+    <Label text="Sistem Informasi Pengajuan Data Petani" styleClass="sidebar-brand-sub" wrapText="true"/>
 
     <VBox alignment="CENTER_LEFT" spacing="2" styleClass="sidebar-user-box">
         <Label fx:id="userNameLabel" text="Petugas" styleClass="sidebar-user-name"/>
@@ -24,11 +24,11 @@
 
     <Separator/>
 
-    <Button text="Beranda (Dashboard)" maxWidth="Infinity" styleClass="sidebar-button" onAction="#goToDashboard"/>
-    <Button text="Verifikasi Pengajuan" maxWidth="Infinity" styleClass="sidebar-button" onAction="#goToVerifikasiPengajuan"/>
-    <Button text="Verifikasi Gagal Panen" maxWidth="Infinity" styleClass="sidebar-button" onAction="#goToVerifikasiLaporan"/>
-    <Button text="Hasil Verifikasi" maxWidth="Infinity" styleClass="sidebar-button" onAction="#goToHasilVerifikasi"/>
-    <Button text="Profil" maxWidth="Infinity" styleClass="sidebar-button" onAction="#goToProfil"/>
+    <Button fx:id="btnDashboard" text="Beranda Petugas BPP" maxWidth="Infinity" styleClass="sidebar-button" onAction="#goToDashboard"/>
+    <Button fx:id="btnVerifikasiPupuk" text="Verifikasi Pengajuan" maxWidth="Infinity" styleClass="sidebar-button" onAction="#goToVerifikasiPengajuan"/>
+    <Button fx:id="btnVerifikasiGagal" text="Verifikasi Gagal Panen" maxWidth="Infinity" styleClass="sidebar-button" onAction="#goToVerifikasiLaporan"/>
+    <Button fx:id="btnHasil" text="Hasil Verifikasi" maxWidth="Infinity" styleClass="sidebar-button" onAction="#goToHasilVerifikasi"/>
+    <Button fx:id="btnProfil" text="Profil" maxWidth="Infinity" styleClass="sidebar-button" onAction="#goToProfil"/>
 
     <VBox VBox.vgrow="ALWAYS"/>
 

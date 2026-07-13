@@ -43,6 +43,10 @@ public final class NavigationManager {
         primaryStage = stage;
     }
 
+    public static String getCurrentFxml() {
+        return currentFxml;
+    }
+
     // ------------------------------------------------------------------
     // Autentikasi
     // ------------------------------------------------------------------

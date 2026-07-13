@@ -10,6 +10,7 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 
 <BorderPane xmlns="http://javafx.com/javafx"
@@ -33,28 +34,36 @@
 
             <GridPane hgap="16" vgap="12" styleClass="form-grid">
                 <Label text="Pilih Lahan Terdaftar:" GridPane.rowIndex="0" GridPane.columnIndex="0" styleClass="form-label"/>
-                <ComboBox fx:id="lahanCombo" promptText="Pilih lahan terdampak" maxWidth="Infinity" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+                <ComboBox fx:id="lahanCombo" promptText="Pilih lahan terdampak" maxWidth="Infinity" GridPane.rowIndex="0" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS"/>
 
                 <Label text="Penyebab Gagal Panen:" GridPane.rowIndex="1" GridPane.columnIndex="0" styleClass="form-label"/>
-                <ComboBox fx:id="penyebabCombo" promptText="Pilih penyebab" maxWidth="Infinity" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+                <ComboBox fx:id="penyebabCombo" promptText="Pilih penyebab" maxWidth="Infinity" GridPane.rowIndex="1" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS"/>
 
-                <Label text="Luas Terdampak (Ha):" GridPane.rowIndex="2" GridPane.columnIndex="0" styleClass="form-label"/>
-                <TextField fx:id="luasField" promptText="Masukkan luas yang terdampak" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+                <Label text="Luas Terdampak:" GridPane.rowIndex="2" GridPane.columnIndex="0" styleClass="form-label"/>
+                <HBox spacing="8" GridPane.rowIndex="2" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS">
+                    <TextField fx:id="luasField" promptText="Contoh: 0.5 atau 200" styleClass="input-field" HBox.hgrow="ALWAYS"/>
+                    <ComboBox fx:id="satuanLuasCombo" prefWidth="150"/>
+                </HBox>
 
                 <Label text="Persentase Kerusakan (%):" GridPane.rowIndex="3" GridPane.columnIndex="0" styleClass="form-label"/>
-                <TextField fx:id="kerusakanField" promptText="Masukkan perkiraan % kerusakan (1 - 100)" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+                <TextField fx:id="kerusakanField" promptText="Masukkan perkiraan % kerusakan (1 - 100)" GridPane.rowIndex="3" GridPane.columnIndex="1" styleClass="input-field" GridPane.hgrow="ALWAYS"/>
 
                 <Label text="Tanggal Kejadian:" GridPane.rowIndex="4" GridPane.columnIndex="0" styleClass="form-label"/>
-                <DatePicker fx:id="tanggalPicker" maxWidth="Infinity" GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+                <DatePicker fx:id="tanggalPicker" maxWidth="Infinity" GridPane.rowIndex="4" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS"/>
 
                 <Label text="Foto Bukti Kerusakan:" GridPane.rowIndex="5" GridPane.columnIndex="0" styleClass="form-label"/>
-                <HBox spacing="12" alignment="CENTER_LEFT" GridPane.rowIndex="5" GridPane.columnIndex="1">
-                    <Button text="Pilih Foto" onAction="#handleUploadFoto" styleClass="secondary-button"/>
-                    <Label fx:id="filePathLabel" text="Belum ada berkas dipilih" styleClass="file-path-label"/>
+                <HBox alignment="CENTER_LEFT" GridPane.rowIndex="5" GridPane.columnIndex="1">
+                    <Button text="Upload Foto Bukti Kerusakan" onAction="#handleUploadFoto" styleClass="primary-button"/>
                 </HBox>
 
                 <Label text="Preview Foto:" GridPane.rowIndex="6" GridPane.columnIndex="0" styleClass="form-label"/>
-                <ImageView fx:id="previewImage" fitHeight="150" fitWidth="200" preserveRatio="true" visible="false" GridPane.rowIndex="6" GridPane.columnIndex="1"/>
+                <HBox alignment="CENTER_LEFT" GridPane.rowIndex="6" GridPane.columnIndex="1">
+                    <StackPane styleClass="detail-photo-frame" maxWidth="170" maxHeight="170">
+                        <padding><Insets top="8" right="8" bottom="8" left="8"/></padding>
+                        <Label fx:id="fotoPlaceholder" text="Format: JPG, JPEG, PNG" styleClass="hint-label" wrapText="true" textAlignment="CENTER"/>
+                        <ImageView fx:id="previewImage" fitHeight="150" fitWidth="150" preserveRatio="true" visible="false"/>
+                    </StackPane>
+                </HBox>
             </GridPane>
 
             <HBox spacing="12" alignment="CENTER_LEFT">

@@ -97,6 +97,17 @@ public final class DataService {
             registerPetaniInternal("3201012501900002", "petani123", "Budi Santoso", "3201011234560001", "Desa Sukamaju, Bogor", "081300000002", "Tani Makmur 1");
             registerPetaniInternal("3309022803880003", "petani123", "Wayan Sudarma", "3309021234560002", "Desa Tegal Rejo, Klaten", "081300000003", "Tani Sejahtera");
             registerPetaniInternal("3215017004950004", "petani123", "Siti Aminah", "3215011234560003", "Desa Cikampek, Karawang", "081300000004", "Tani Makmur 2");
+        }
+        
+        if (PETANI_LIST.size() < 100) {
+            java.util.Random rnd = new java.util.Random();
+            String[] firstNames = {"Ahmad", "Budi", "Cipto", "Dedi", "Eko", "Fajar", "Gunawan", "Hadi", "Iwan", "Joko", "Rina", "Siti", "Lestari", "Dewi"};
+            String[] lastNames = {"Santoso", "Wijaya", "Kusuma", "Nugroho", "Pratama", "Saputra", "Wibowo", "Setiawan", "Hidayat", "Baskoro", "Putri", "Sari"};
+            for (int i = 0; i < 100; i++) {
+                String nik = "32" + (10000000000000L + rnd.nextInt(9000000) * 1000L + i);
+                String nama = firstNames[rnd.nextInt(firstNames.length)] + " " + lastNames[rnd.nextInt(lastNames.length)];
+                registerPetaniInternal(nik, "petani123", nama, "32" + (10000000000000L + rnd.nextInt(9000000) * 1000L), "Desa Tani Jaya " + i, "0812" + (10000000 + rnd.nextInt(89999999)), "Kelompok " + (i%10));
+            }
             saveToXml(new ArrayList<>(PETANI_LIST), "petani.xml");
             saveToXml(new ArrayList<>(USERS), "users.xml");
         }
@@ -132,6 +143,74 @@ public final class DataService {
             l.setTanggalVerifikasi(LocalDate.now().minusDays(4));
             l.setVerifikatorUsername("petugas");
             GAGAL_PANEN_LIST.add(l);
+            saveToXml(new ArrayList<>(GAGAL_PANEN_LIST), "gagal_panen.xml");
+        }
+        
+        // Remove specific NIK
+        Optional<Petani> target = PETANI_LIST.stream().filter(p -> "1571085508070001".equals(p.getNik())).findFirst();
+        if (target.isPresent()) {
+            int pId = target.get().getId();
+            PETANI_LIST.removeIf(p -> p.getId() == pId);
+            USERS.removeIf(u -> "1571085508070001".equals(u.getNik()));
+            PENGAJUAN_LIST.removeIf(p -> p.getPetaniId() == pId);
+            GAGAL_PANEN_LIST.removeIf(g -> g.getPetaniId() == pId);
+            saveToXml(new ArrayList<>(USERS), "users.xml");
+            saveToXml(new ArrayList<>(PETANI_LIST), "petani.xml");
+            saveToXml(new ArrayList<>(PENGAJUAN_LIST), "pengajuan.xml");
+            saveToXml(new ArrayList<>(GAGAL_PANEN_LIST), "gagal_panen.xml");
+        }
+
+        // Pastikan tidak ada data yang luas lahannya melebihi 2.0 Hektar
+        boolean adaYangDikoreksi = false;
+        java.util.Random rnd = new java.util.Random();
+        String[] jenisTanamanArr = {"Padi", "Jagung", "Kedelai", "Cabai", "Bawang", "Tebu", "Kopi", "Kakao"};
+        String[] penyebabArr = {"Hama/Penyakit", "Banjir", "Kekeringan", "Cuaca Ekstrem", "Gagal Benih"};
+        
+        for (Pengajuan p : PENGAJUAN_LIST) {
+            if (p.getLuasLahan() > 2.0) {
+                p.setLuasLahan(2.0);
+                adaYangDikoreksi = true;
+            }
+            // Acak ulang tanaman yang sebelumnya hanya didominasi Padi/Jagung
+            if ("Padi".equals(p.getJenisTanaman()) || "Jagung".equals(p.getJenisTanaman())) {
+                p.setJenisTanaman(jenisTanamanArr[rnd.nextInt(jenisTanamanArr.length)]);
+                adaYangDikoreksi = true;
+            }
+        }
+        for (LaporanGagalPanen g : GAGAL_PANEN_LIST) {
+            if (g.getLuasTerdampak() > 2.0) {
+                g.setLuasTerdampak(2.0);
+                adaYangDikoreksi = true;
+            }
+            if ("Hama/Penyakit".equals(g.getPenyebab())) {
+                g.setPenyebab(penyebabArr[rnd.nextInt(penyebabArr.length)]);
+                adaYangDikoreksi = true;
+            }
+        }
+        if (adaYangDikoreksi) {
+            saveToXml(new ArrayList<>(PENGAJUAN_LIST), "pengajuan.xml");
+            saveToXml(new ArrayList<>(GAGAL_PANEN_LIST), "gagal_panen.xml");
+        }
+
+        if (PENGAJUAN_LIST.size() < 100 && PETANI_LIST.size() >= 100) {
+            for (int i = 0; i < PETANI_LIST.size(); i++) {
+                Petani p = PETANI_LIST.get(i);
+                if (PENGAJUAN_LIST.stream().noneMatch(peng -> peng.getPetaniId() == p.getId())) {
+                    StatusPengajuan stat = (i % 3 == 0) ? StatusPengajuan.DISETUJUI : ((i % 3 == 1) ? StatusPengajuan.MENUNGGU_VERIFIKASI : StatusPengajuan.DITOLAK);
+                    PENGAJUAN_LIST.add(new Pengajuan(nextPengajuanId++, p.getId(), 0.5 + rnd.nextDouble(), "Milik Sendiri", jenisTanamanArr[rnd.nextInt(jenisTanamanArr.length)], "sample-photos/dummy.jpg", stat, (stat == StatusPengajuan.DITOLAK ? "Berkas tidak lengkap" : null), LocalDate.now().minusDays(rnd.nextInt(10) + 1), stat == StatusPengajuan.MENUNGGU_VERIFIKASI ? null : LocalDate.now().minusDays(rnd.nextInt(2))));
+                }
+                if (i % 5 == 0 && GAGAL_PANEN_LIST.stream().noneMatch(l -> l.getPetaniId() == p.getId())) {
+                    LaporanGagalPanen l = new LaporanGagalPanen(GAGAL_PANEN_LIST.size() + 1, p.getId(), p.getNamaLengkap(), penyebabArr[rnd.nextInt(penyebabArr.length)], 0.2 + rnd.nextDouble(), 50 + rnd.nextInt(50), LocalDate.now().minusDays(rnd.nextInt(10) + 1), "sample-photos/damage.jpg");
+                    if (i % 10 == 0) {
+                        l.setStatus("Terverifikasi");
+                        l.setCatatanRekomendasi("Disetujui");
+                        l.setTanggalVerifikasi(LocalDate.now());
+                        l.setVerifikatorUsername("petugas");
+                    }
+                    GAGAL_PANEN_LIST.add(l);
+                }
+            }
+            saveToXml(new ArrayList<>(PENGAJUAN_LIST), "pengajuan.xml");
             saveToXml(new ArrayList<>(GAGAL_PANEN_LIST), "gagal_panen.xml");
         }
         
@@ -287,6 +366,17 @@ public final class DataService {
         PENGAJUAN_LIST.add(pengajuan);
         saveToXml(new ArrayList<>(PENGAJUAN_LIST), "pengajuan.xml");
     }
+
+    public static void updatePengajuan(Pengajuan pengajuan) {
+        for (int i = 0; i < PENGAJUAN_LIST.size(); i++) {
+            if (PENGAJUAN_LIST.get(i).getId() == pengajuan.getId()) {
+                PENGAJUAN_LIST.set(i, pengajuan);
+                break;
+            }
+        }
+        saveToXml(new ArrayList<>(PENGAJUAN_LIST), "pengajuan.xml");
+    }
+
 
     public static void setujuiPengajuan(int pengajuanId) {
         getPengajuanById(pengajuanId).ifPresent(p -> {

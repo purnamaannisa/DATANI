@@ -10,6 +10,7 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 
 <BorderPane xmlns="http://javafx.com/javafx"
@@ -33,7 +34,7 @@
                 <Label text="Data pribadi Anda dimuat otomatis dari akun. Lengkapi data lahan di bawah ini."
                        styleClass="page-subtitle" wrapText="true"/>
 
-                <VBox spacing="14" maxWidth="560" styleClass="profile-card">
+                <VBox spacing="14" maxWidth="Infinity" styleClass="profile-card">
                     <padding>
                         <Insets top="20" right="20" bottom="20" left="20"/>
                     </padding>
@@ -77,8 +78,11 @@
                     <Label text="Data Lahan &amp; Pengajuan" styleClass="section-title"/>
 
                     <VBox spacing="4">
-                        <Label text="Luas Lahan (hektar)" styleClass="field-label"/>
-                        <TextField fx:id="luasLahanField" promptText="Contoh: 1.5"/>
+                        <Label text="Luas Lahan" styleClass="field-label"/>
+                        <HBox spacing="8">
+                            <TextField fx:id="luasLahanField" promptText="Contoh: 1.5 atau 5000" styleClass="input-field" HBox.hgrow="ALWAYS"/>
+                            <ComboBox fx:id="satuanLuasCombo" prefWidth="150"/>
+                        </HBox>
                     </VBox>
 
                     <VBox spacing="4">
@@ -92,14 +96,28 @@
                     </VBox>
 
                     <VBox spacing="4">
-                        <Label text="Upload Foto Bukti Lahan" styleClass="field-label"/>
-                        <HBox spacing="12" alignment="CENTER_LEFT">
-                            <ImageView fx:id="fotoLahanPreview" fitWidth="110" fitHeight="110" preserveRatio="true"/>
-                            <VBox spacing="6">
-                                <Button text="Upload Foto Bukti Lahan" onAction="#handleUploadFotoLahan" styleClass="secondary-button"/>
-                                <Label fx:id="fotoLahanFileNameLabel" styleClass="hint-label" wrapText="true"/>
-                                <Label text="Format: JPG, JPEG, PNG" styleClass="hint-label"/>
-                            </VBox>
+                        <Label text="Upload Foto Bukti Lahan" styleClass="field-label">
+                            <padding>
+                                <Insets top="12"/>
+                            </padding>
+                        </Label>
+                        <HBox alignment="CENTER_LEFT">
+                            <Button text="Upload Foto Bukti Lahan" onAction="#handleUploadFotoLahan" styleClass="primary-button"/>
+                        </HBox>
+                        
+                        <Label text="Preview Foto:" styleClass="field-label">
+                            <padding>
+                                <Insets top="8"/>
+                            </padding>
+                        </Label>
+                        <HBox alignment="CENTER_LEFT">
+                            <StackPane styleClass="detail-photo-frame" maxWidth="150" maxHeight="150">
+                                <padding>
+                                    <Insets top="8" right="8" bottom="8" left="8"/>
+                                </padding>
+                                <Label fx:id="fotoLahanPlaceholder" text="Format: JPG, JPEG, PNG" styleClass="hint-label" wrapText="true" textAlignment="CENTER"/>
+                                <ImageView fx:id="fotoLahanPreview" fitWidth="134" fitHeight="134" preserveRatio="true"/>
+                            </StackPane>
                         </HBox>
                     </VBox>
 

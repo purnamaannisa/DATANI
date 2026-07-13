@@ -135,10 +135,7 @@
 }
 
 .login-tabpane .tab-content-area {
-    -fx-background-color: -fx-surface;
-    -fx-border-color: -fx-border-soft;
-    -fx-border-width: 0 1 1 1;
-    -fx-border-radius: 0 0 8 8;
+    -fx-background-color: transparent;
 }
 
 .login-tab-content {
@@ -154,8 +151,25 @@
     -fx-font-size: 13px;
 }
 
-.login-input:focused {
+.login-input:focused, .input-field:focused {
     -fx-border-color: -fx-primary;
+}
+
+.input-field {
+    -fx-pref-height: 36px;
+    -fx-background-radius: 7;
+    -fx-border-radius: 7;
+    -fx-border-color: #d7dbd8;
+    -fx-padding: 0 10;
+    -fx-font-size: 13px;
+    -fx-background-color: -fx-surface;
+    -fx-text-fill: -fx-ink;
+}
+
+.input-field:readonly {
+    -fx-background-color: #f1f4f1;
+    -fx-text-fill: -fx-ink-soft;
+    -fx-opacity: 1.0;
 }
 
 /* ===================================================================
@@ -288,6 +302,12 @@
     -fx-cursor: hand;
 }
 
+.sidebar-button.active {
+    -fx-background-color: #388e3c;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+
 .sidebar-button:hover {
     -fx-background-color: #2e7d32;
 }
@@ -334,6 +354,27 @@
     -fx-border-radius: 10;
     -fx-effect: dropshadow(gaussian, rgba(17,24,39,0.06), 10, 0, 0, 3);
 }
+
+.stat-card {
+    -fx-background-color: -fx-surface;
+    -fx-background-radius: 8;
+    -fx-border-color: -fx-border-soft;
+    -fx-border-radius: 8;
+    -fx-padding: 16;
+    -fx-effect: dropshadow(gaussian, rgba(17,24,39,0.04), 8, 0, 0, 2);
+}
+
+.stat-card-title {
+    -fx-font-size: 13px;
+    -fx-text-fill: -fx-hint;
+}
+
+.stat-card-value {
+    -fx-font-size: 26px;
+    -fx-font-weight: bold;
+    -fx-text-fill: -fx-primary-dark;
+}
+
 
 .section-title {
     -fx-font-size: 13.5px;

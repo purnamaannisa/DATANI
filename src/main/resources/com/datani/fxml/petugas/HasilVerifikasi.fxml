@@ -7,6 +7,7 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
 <?import javafx.scene.layout.VBox?>
 
 <BorderPane xmlns="http://javafx.com/javafx"
@@ -32,17 +33,43 @@
             <HBox spacing="10" alignment="CENTER_LEFT">
                 <Label text="Filter:" styleClass="field-label"/>
                 <ComboBox fx:id="filterCombo" prefWidth="180"/>
+                <Region HBox.hgrow="ALWAYS"/>
+                <Label text="&#128269;" styleClass="field-label"/>
+                <javafx.scene.control.TextField fx:id="searchNikField" promptText="Cari berdasarkan NIK" prefWidth="220" styleClass="input-field"/>
             </HBox>
 
-            <TableView fx:id="hasilTable" VBox.vgrow="ALWAYS" styleClass="data-table">
-                <columns>
-                    <TableColumn fx:id="idColumn" text="ID Pengajuan" prefWidth="110"/>
-                    <TableColumn fx:id="namaPetaniColumn" text="Nama Petani" prefWidth="180"/>
-                    <TableColumn fx:id="jenisTanamanColumn" text="Jenis Tanaman" prefWidth="150"/>
-                    <TableColumn fx:id="statusColumn" text="Status" prefWidth="130"/>
-                    <TableColumn fx:id="tanggalVerifikasiColumn" text="Tanggal Verifikasi" prefWidth="150"/>
-                </columns>
-            </TableView>
+            <javafx.scene.control.TabPane VBox.vgrow="ALWAYS" tabClosingPolicy="UNAVAILABLE" styleClass="login-tabpane">
+                <javafx.scene.control.Tab text="Pupuk Subsidi">
+                    <TableView fx:id="hasilTable" styleClass="data-table">
+                        <columnResizePolicy>
+                            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY"/>
+                        </columnResizePolicy>
+                        <columns>
+                            <TableColumn fx:id="idColumn" text="ID Pengajuan" prefWidth="110"/>
+                            <TableColumn fx:id="nikColumn" text="NIK Petani" prefWidth="150"/>
+                            <TableColumn fx:id="namaPetaniColumn" text="Nama Petani" prefWidth="180"/>
+                            <TableColumn fx:id="jenisTanamanColumn" text="Jenis Tanaman" prefWidth="150"/>
+                            <TableColumn fx:id="statusColumn" text="Status" prefWidth="130"/>
+                            <TableColumn fx:id="tanggalVerifikasiColumn" text="Tanggal Verifikasi" prefWidth="150"/>
+                        </columns>
+                    </TableView>
+                </javafx.scene.control.Tab>
+                <javafx.scene.control.Tab text="Laporan Gagal Panen">
+                    <TableView fx:id="gpTable" styleClass="data-table">
+                        <columnResizePolicy>
+                            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY"/>
+                        </columnResizePolicy>
+                        <columns>
+                            <TableColumn fx:id="gpIdColumn" text="ID Laporan" prefWidth="110"/>
+                            <TableColumn fx:id="gpNikColumn" text="NIK Petani" prefWidth="150"/>
+                            <TableColumn fx:id="gpNamaPetaniColumn" text="Nama Petani" prefWidth="180"/>
+                            <TableColumn fx:id="gpKerusakanColumn" text="Tingkat Kerusakan" prefWidth="150"/>
+                            <TableColumn fx:id="gpStatusColumn" text="Status" prefWidth="130"/>
+                            <TableColumn fx:id="gpTanggalVerifikasiColumn" text="Tanggal Verifikasi" prefWidth="150"/>
+                        </columns>
+                    </TableView>
+                </javafx.scene.control.Tab>
+            </javafx.scene.control.TabPane>
         </VBox>
     </center>
 </BorderPane>

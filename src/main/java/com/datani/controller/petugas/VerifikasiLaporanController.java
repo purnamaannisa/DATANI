@@ -20,7 +20,9 @@ import java.util.List;
 public class VerifikasiLaporanController {
 
     @FXML private TableView<LaporanGagalPanen> antreanTable;
+    @FXML private javafx.scene.control.TextField searchNikField;
     @FXML private TableColumn<LaporanGagalPanen, Integer> idColumn;
+    @FXML private TableColumn<LaporanGagalPanen, String> nikColumn;
     @FXML private TableColumn<LaporanGagalPanen, String> namaColumn;
     @FXML private TableColumn<LaporanGagalPanen, String> penyebabColumn;
 
@@ -38,6 +40,7 @@ public class VerifikasiLaporanController {
     @FXML
     private void initialize() {
         idColumn.setCellValueFactory(data -> new javafx.beans.property.SimpleIntegerProperty(data.getValue().getId()).asObject());
+        nikColumn.setCellValueFactory(data -> new javafx.beans.property.SimpleStringProperty(DataService.getNikPetaniById(data.getValue().getPetaniId())));
         namaColumn.setCellValueFactory(data -> new javafx.beans.property.SimpleStringProperty(data.getValue().getPetaniNama()));
         penyebabColumn.setCellValueFactory(data -> new javafx.beans.property.SimpleStringProperty(data.getValue().getPenyebab()));
 
@@ -50,13 +53,24 @@ public class VerifikasiLaporanController {
                 detailContainer.setVisible(false);
             }
         });
+        
+        searchNikField.textProperty().addListener((obs, oldValue, newValue) -> refreshTable());
     }
 
     private void refreshTable() {
+        String searchNik = searchNikField.getText() == null ? "" : searchNikField.getText().trim();
+        java.util.Optional<com.datani.model.Petani> searchedPetani = java.util.Optional.empty();
+        if (!searchNik.isEmpty()) {
+            searchedPetani = DataService.getPetaniByNik(searchNik);
+        }
+        final Integer searchedPetaniId = searchedPetani.map(com.datani.model.Petani::getId).orElse(null);
+
         List<LaporanGagalPanen> tempList = new ArrayList<>();
         for (LaporanGagalPanen l : DataService.getAllLaporanGagalPanen()) {
             if (l.getStatus().equals("Menunggu Peninjauan")) {
-                tempList.add(l);
+                if (searchNik.isEmpty() || (searchedPetaniId != null && l.getPetaniId() == searchedPetaniId)) {
+                    tempList.add(l);
+                }
             }
         }
         

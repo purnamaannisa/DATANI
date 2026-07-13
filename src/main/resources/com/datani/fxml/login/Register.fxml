@@ -33,58 +33,50 @@
                     <Label text="Lengkapi data diri untuk membuat akun DATANI" styleClass="login-form-subtitle"/>
                 </VBox>
 
-                <GridPane hgap="24" vgap="16" styleClass="register-grid">
-                    <columnConstraints>
-                        <ColumnConstraints percentWidth="50"/>
-                        <ColumnConstraints percentWidth="50"/>
-                    </columnConstraints>
-                    <rowConstraints>
-                        <RowConstraints/>
-                        <RowConstraints/>
-                        <RowConstraints/>
-                        <RowConstraints/>
-                    </rowConstraints>
-
-                    <!-- Baris 1 -->
-                    <VBox spacing="6" GridPane.rowIndex="0" GridPane.columnIndex="0">
+                <VBox spacing="16" styleClass="register-grid">
+                    <VBox spacing="6">
                         <Label text="NIK" styleClass="field-label"/>
                         <TextField fx:id="nikField" promptText="16 digit NIK"/>
                     </VBox>
-                    <VBox spacing="6" GridPane.rowIndex="0" GridPane.columnIndex="1">
+                    <VBox spacing="6">
                         <Label text="Nomor KK" styleClass="field-label"/>
                         <TextField fx:id="nomorKKField" promptText="16 digit Nomor Kartu Keluarga"/>
                     </VBox>
 
-                    <!-- Baris 2 -->
-                    <VBox spacing="6" GridPane.rowIndex="1" GridPane.columnIndex="0">
+                    <VBox spacing="6">
                         <Label text="Nama Lengkap" styleClass="field-label"/>
                         <TextField fx:id="namaLengkapField" promptText="Nama lengkap sesuai KTP"/>
                     </VBox>
-                    <VBox spacing="6" GridPane.rowIndex="1" GridPane.columnIndex="1">
+                    <VBox spacing="6">
                         <Label text="Nomor HP" styleClass="field-label"/>
                         <TextField fx:id="nomorHPField" promptText="Contoh: 081234567890"/>
                     </VBox>
 
-                    <!-- Baris 3 -->
-                    <VBox spacing="6" GridPane.rowIndex="2" GridPane.columnIndex="0">
+                    <VBox spacing="6">
                         <Label text="Kelompok Tani" styleClass="field-label"/>
                         <TextField fx:id="kelompokTaniField" promptText="Nama kelompok tani"/>
                     </VBox>
-                    <VBox spacing="6" GridPane.rowIndex="2" GridPane.columnIndex="1">
+                    <VBox spacing="6">
                         <Label text="Alamat" styleClass="field-label"/>
                         <TextField fx:id="alamatField" promptText="Alamat lengkap tempat tinggal"/>
                     </VBox>
 
-                    <!-- Baris 4 -->
-                    <VBox spacing="6" GridPane.rowIndex="3" GridPane.columnIndex="0">
+                    <VBox spacing="6">
                         <Label text="Buat Kata Sandi" styleClass="field-label"/>
-                        <PasswordField fx:id="passwordField" promptText="Buat kata sandi"/>
+                        <StackPane>
+                            <PasswordField fx:id="passwordField" promptText="Buat kata sandi"/>
+                            <TextField fx:id="passwordVisibleField" promptText="Buat kata sandi" visible="false" managed="false"/>
+                        </StackPane>
+                        <javafx.scene.control.CheckBox fx:id="showPasswordCheck" text="Tampilkan kata sandi"/>
                     </VBox>
-                    <VBox spacing="6" GridPane.rowIndex="3" GridPane.columnIndex="1">
+                    <VBox spacing="6">
                         <Label text="Konfirmasi Kata Sandi" styleClass="field-label"/>
-                        <PasswordField fx:id="konfirmasiPasswordField" promptText="Ulangi kata sandi"/>
+                        <StackPane>
+                            <PasswordField fx:id="konfirmasiPasswordField" promptText="Ulangi kata sandi"/>
+                            <TextField fx:id="konfirmasiPasswordVisibleField" promptText="Ulangi kata sandi" visible="false" managed="false"/>
+                        </StackPane>
                     </VBox>
-                </GridPane>
+                </VBox>
 
                 <Label fx:id="errorLabel" styleClass="error-label" wrapText="true"/>
 

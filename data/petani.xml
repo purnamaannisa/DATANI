@@ -36,12 +36,921 @@
     <kelompokTani>suka</kelompokTani>
   </com.datani.model.Petani>
   <com.datani.model.Petani>
-    <id>5</id>
-    <nik>1571085508070001</nik>
-    <namaLengkap>ALFIA SYAKIRA</namaLengkap>
-    <nomorKK>0000000000000000</nomorKK>
-    <alamat>JLN.KLOUHIN</alamat>
-    <nomorHP>0800000000000</nomorHP>
-    <kelompokTani>KOPIKULI</kelompokTani>
+    <id>6</id>
+    <nik>2552327900000000</nik>
+    <namaLengkap>Annisa</namaLengkap>
+    <nomorKK>2790000000000000</nomorKK>
+    <alamat>jl.cendana</alamat>
+    <nomorHP>0813000000000</nomorHP>
+    <kelompokTani>Suka suka</kelompokTani>
+  </com.datani.model.Petani>
+  <com.datani.model.Petani>
+    <id>7</id>
+    <nik>1234567899876543</nik>
+    <namaLengkap>Budi</namaLengkap>
+    <nomorKK>0700000000000000</nomorKK>
+    <alamat>jl.Kaliurang</alamat>
+    <nomorHP>081234567890</nomorHP>
+    <kelompokTani>TANI MAJU</kelompokTani>
+  </com.datani.model.Petani>
+  <com.datani.model.Petani>
+    <id>8</id>
+    <nik>3210001877084000</nik>
+    <namaLengkap>Cipto Pratama</namaLengkap>
+    <nomorKK>3210000139497000</nomorKK>
+    <alamat>Desa Tani Jaya 0</alamat>
+    <nomorHP>081298461564</nomorHP>
+    <kelompokTani>Kelompok 0</kelompokTani>
+  </com.datani.model.Petani>
+  <com.datani.model.Petani>
+    <id>9</id>
+    <nik>3210000100181001</nik>
+    <namaLengkap>Iwan Nugroho</namaLengkap>
+    <nomorKK>3210001568440000</nomorKK>
+    <alamat>Desa Tani Jaya 1</alamat>
+    <nomorHP>081228773727</nomorHP>
+    <kelompokTani>Kelompok 1</kelompokTani>
+  </com.datani.model.Petani>
+  <com.datani.model.Petani>
+    <id>10</id>
+    <nik>3210006911176002</nik>
+    <namaLengkap>Hadi Nugroho</namaLengkap>
+    <nomorKK>3210008865770000</nomorKK>
+    <alamat>Desa Tani Jaya 2</alamat>
+    <nomorHP>081234625685</nomorHP>
+    <kelompokTani>Kelompok 2</kelompokTani>
+  </com.datani.model.Petani>
+  <com.datani.model.Petani>
+    <id>11</id>
+    <nik>3210003150927003</nik>
+    <namaLengkap>Siti Wibowo</namaLengkap>
+    <nomorKK>3210007587802000</nomorKK>
+    <alamat>Desa Tani Jaya 3</alamat>
+    <nomorHP>081238252634</nomorHP>
+    <kelompokTani>Kelompok 3</kelompokTani>
+  </com.datani.model.Petani>
+  <com.datani.model.Petani>
+    <id>12</id>
+    <nik>3210002473162004</nik>
+    <namaLengkap>Dewi Putri</namaLengkap>
+    <nomorKK>3210005452387000</nomorKK>
+    <alamat>Desa Tani Jaya 4</alamat>
+    <nomorHP>081282641964</nomorHP>
+    <kelompokTani>Kelompok 4</kelompokTani>
+  </com.datani.model.Petani>
+  <com.datani.model.Petani>
+    <id>13</id>
+    <nik>3210005554147005</nik>
+    <namaLengkap>Dedi Sari</namaLengkap>
+    <nomorKK>3210004382412000</nomorKK>
+    <alamat>Desa Tani Jaya 5</alamat>
+    <nomorHP>081219857571</nomorHP>
+    <kelompokTani>Kelompok 5</kelompokTani>
+  </com.datani.model.Petani>
+  <com.datani.model.Petani>
+    <id>14</id>
+    <nik>3210006322256006</nik>
+    <namaLengkap>Dedi Santoso</namaLengkap>
+    <nomorKK>3210004454010000</nomorKK>
+    <alamat>Desa Tani Jaya 6</alamat>
+    <nomorHP>081280609704</nomorHP>
+    <kelompokTani>Kelompok 6</kelompokTani>
+  </com.datani.model.Petani>
+  <com.datani.model.Petani>
+    <id>15</id>
+    <nik>3210004319938007</nik>
+    <namaLengkap>Siti Sari</namaLengkap>
+    <nomorKK>3210003986279000</nomorKK>
+    <alamat>Desa Tani Jaya 7</alamat>
+    <nomorHP>081268613434</nomorHP>
+    <kelompokTani>Kelompok 7</kelompokTani>
+  </com.datani.model.Petani>
+  <com.datani.model.Petani>
+    <id>16</id>
+    <nik>3210006582093008</nik>
+    <namaLengkap>Budi Putri</namaLengkap>
+    <nomorKK>3210003943673000</nomorKK>
+    <alamat>Desa Tani Jaya 8</alamat>
+    <nomorHP>081241988659</nomorHP>
+    <kelompokTani>Kelompok 8</kelompokTani>
+  </com.datani.model.Petani>
+  <com.datani.model.Petani>
+    <id>17</id>
+    <nik>3210008402330009</nik>
+    <namaLengkap>Ahmad Pratama</namaLengkap>
+    <nomorKK>3210003844046000</nomorKK>
+    <alamat>Desa Tani Jaya 9</alamat>
+    <nomorHP>081271680182</nomorHP>
+    <kelompokTani>Kelompok 9</kelompokTani>
+  </com.datani.model.Petani>
+  <com.datani.model.Petani>
+    <id>18</id>
+    <nik>3210003284407010</nik>
+    <namaLengkap>Hadi Hidayat</namaLengkap>
+    <nomorKK>3210003847776000</nomorKK>
+    <alamat>Desa Tani Jaya 10</alamat>
+    <nomorHP>081278683891</nomorHP>
+    <kelompokTani>Kelompok 0</kelompokTani>
+  </com.datani.model.Petani>
+  <com.datani.model.Petani>
+    <id>19</id>
+    <nik>3210001488540011</nik>
+    <namaLengkap>Ahmad Pratama</namaLengkap>
+    <nomorKK>3210000837757000</nomorKK>
+    <alamat>Desa Tani Jaya 11</alamat>
+    <nomorHP>081258644734</nomorHP>
+    <kelompokTani>Kelompok 1</kelompokTani>
+  </com.datani.model.Petani>
+  <com.datani.model.Petani>
+    <id>20</id>
+    <nik>3210005859671012</nik>
+    <namaLengkap>Hadi Wijaya</namaLengkap>
+    <nomorKK>3210004769146000</nomorKK>
+    <alamat>Desa Tani Jaya 12</alamat>
+    <nomorHP>081289753240</nomorHP>
+    <kelompokTani>Kelompok 2</kelompokTani>
+  </com.datani.model.Petani>
+  <com.datani.model.Petani>
+    <id>21</id>
+    <nik>3210002514153013</nik>
+    <namaLengkap>Fajar Hidayat</namaLengkap>
+    <nomorKK>3210008625152000</nomorKK>
+    <alamat>Desa Tani Jaya 13</alamat>
+    <nomorHP>081264873820</nomorHP>
+    <kelompokTani>Kelompok 3</kelompokTani>
+  </com.datani.model.Petani>
+  <com.datani.model.Petani>
+    <id>22</id>
+    <nik>3210002391834014</nik>
+    <namaLengkap>Siti Kusuma</namaLengkap>
+    <nomorKK>3210000134385000</nomorKK>
+    <alamat>Desa Tani Jaya 14</alamat>
+    <nomorHP>081230284496</nomorHP>
+    <kelompokTani>Kelompok 4</kelompokTani>
+  </com.datani.model.Petani>
+  <com.datani.model.Petani>
+    <id>23</id>
+    <nik>3210007032340015</nik>
+    <namaLengkap>Cipto Saputra</namaLengkap>
+    <nomorKK>3210004013524000</nomorKK>
+    <alamat>Desa Tani Jaya 15</alamat>
+    <nomorHP>081234912301</nomorHP>
+    <kelompokTani>Kelompok 5</kelompokTani>
+  </com.datani.model.Petani>
+  <com.datani.model.Petani>
+    <id>24</id>
+    <nik>3210006113883016</nik>
+    <namaLengkap>Joko Putri</namaLengkap>
+    <nomorKK>3210003829977000</nomorKK>
+    <alamat>Desa Tani Jaya 16</alamat>
+    <nomorHP>081213628104</nomorHP>
+    <kelompokTani>Kelompok 6</kelompokTani>
+  </com.datani.model.Petani>
+  <com.datani.model.Petani>
+    <id>25</id>
+    <nik>3210000036404017</nik>
+    <namaLengkap>Dedi Saputra</namaLengkap>
+    <nomorKK>3210006406373000</nomorKK>
+    <alamat>Desa Tani Jaya 17</alamat>
+    <nomorHP>081223509020</nomorHP>
+    <kelompokTani>Kelompok 7</kelompokTani>
+  </com.datani.model.Petani>
+  <com.datani.model.Petani>
+    <id>26</id>
+    <nik>3210006615014018</nik>
+    <namaLengkap>Joko Santoso</namaLengkap>
+    <nomorKK>3210004857366000</nomorKK>
+    <alamat>Desa Tani Jaya 18</alamat>
+    <nomorHP>081263144874</nomorHP>
+    <kelompokTani>Kelompok 8</kelompokTani>
+  </com.datani.model.Petani>
+  <com.datani.model.Petani>
+    <id>27</id>
+    <nik>3210006257890019</nik>
+    <namaLengkap>Lestari Sari</namaLengkap>
+    <nomorKK>3210007488822000</nomorKK>
+    <alamat>Desa Tani Jaya 19</alamat>
+    <nomorHP>081287592132</nomorHP>
+    <kelompokTani>Kelompok 9</kelompokTani>
+  </com.datani.model.Petani>
+  <com.datani.model.Petani>
+    <id>28</id>
+    <nik>3210001479758020</nik>
+    <namaLengkap>Iwan Setiawan</namaLengkap>
+    <nomorKK>3210000907029000</nomorKK>
+    <alamat>Desa Tani Jaya 20</alamat>
+    <nomorHP>081234931598</nomorHP>
+    <kelompokTani>Kelompok 0</kelompokTani>
+  </com.datani.model.Petani>
+  <com.datani.model.Petani>
+    <id>29</id>
+    <nik>3210003119965021</nik>
+    <namaLengkap>Iwan Baskoro</namaLengkap>
+    <nomorKK>3210002921149000</nomorKK>
+    <alamat>Desa Tani Jaya 21</alamat>
+    <nomorHP>081217663021</nomorHP>
+    <kelompokTani>Kelompok 1</kelompokTani>
+  </com.datani.model.Petani>
+  <com.datani.model.Petani>
+    <id>30</id>
+    <nik>3210000096193022</nik>
+    <namaLengkap>Dedi Saputra</namaLengkap>
+    <nomorKK>3210003932840000</nomorKK>
+    <alamat>Desa Tani Jaya 22</alamat>
+    <nomorHP>081239632084</nomorHP>
+    <kelompokTani>Kelompok 2</kelompokTani>
+  </com.datani.model.Petani>
+  <com.datani.model.Petani>
+    <id>31</id>
+    <nik>3210005604552023</nik>
+    <namaLengkap>Siti Santoso</namaLengkap>
+    <nomorKK>3210001234058000</nomorKK>
+    <alamat>Desa Tani Jaya 23</alamat>
+    <nomorHP>081250768974</nomorHP>
+    <kelompokTani>Kelompok 3</kelompokTani>
+  </com.datani.model.Petani>
+  <com.datani.model.Petani>
+    <id>32</id>
+    <nik>3210004705680024</nik>
+    <namaLengkap>Gunawan Sari</namaLengkap>
+    <nomorKK>3210000599638000</nomorKK>
+    <alamat>Desa Tani Jaya 24</alamat>
+    <nomorHP>081213467092</nomorHP>
+    <kelompokTani>Kelompok 4</kelompokTani>
+  </com.datani.model.Petani>
+  <com.datani.model.Petani>
+    <id>33</id>
+    <nik>3210005352735025</nik>
+    <namaLengkap>Dewi Putri</namaLengkap>
+    <nomorKK>3210000596895000</nomorKK>
+    <alamat>Desa Tani Jaya 25</alamat>
+    <nomorHP>081254694057</nomorHP>
+    <kelompokTani>Kelompok 5</kelompokTani>
+  </com.datani.model.Petani>
+  <com.datani.model.Petani>
+    <id>34</id>
+    <nik>3210008964612026</nik>
+    <namaLengkap>Dewi Santoso</namaLengkap>
+    <nomorKK>3210006194229000</nomorKK>
+    <alamat>Desa Tani Jaya 26</alamat>
+    <nomorHP>081294218666</nomorHP>
+    <kelompokTani>Kelompok 6</kelompokTani>
+  </com.datani.model.Petani>
+  <com.datani.model.Petani>
+    <id>35</id>
+    <nik>3210005748784027</nik>
+    <namaLengkap>Lestari Nugroho</namaLengkap>
+    <nomorKK>3210000941239000</nomorKK>
+    <alamat>Desa Tani Jaya 27</alamat>
+    <nomorHP>081244017850</nomorHP>
+    <kelompokTani>Kelompok 7</kelompokTani>
+  </com.datani.model.Petani>
+  <com.datani.model.Petani>
+    <id>36</id>
+    <nik>3210004782354028</nik>
+    <namaLengkap>Rina Nugroho</namaLengkap>
+    <nomorKK>3210001593426000</nomorKK>
+    <alamat>Desa Tani Jaya 28</alamat>
+    <nomorHP>081283280147</nomorHP>
+    <kelompokTani>Kelompok 8</kelompokTani>
+  </com.datani.model.Petani>
+  <com.datani.model.Petani>
+    <id>37</id>
+    <nik>3210007118690029</nik>
+    <namaLengkap>Iwan Setiawan</namaLengkap>
+    <nomorKK>3210001701763000</nomorKK>
+    <alamat>Desa Tani Jaya 29</alamat>
+    <nomorHP>081235254289</nomorHP>
+    <kelompokTani>Kelompok 9</kelompokTani>
+  </com.datani.model.Petani>
+  <com.datani.model.Petani>
+    <id>38</id>
+    <nik>3210008871348030</nik>
+    <namaLengkap>Ahmad Santoso</namaLengkap>
+    <nomorKK>3210004777925000</nomorKK>
+    <alamat>Desa Tani Jaya 30</alamat>
+    <nomorHP>081232947320</nomorHP>
+    <kelompokTani>Kelompok 0</kelompokTani>
+  </com.datani.model.Petani>
+  <com.datani.model.Petani>
+    <id>39</id>
+    <nik>3210001678235031</nik>
+    <namaLengkap>Ahmad Kusuma</namaLengkap>
+    <nomorKK>3210001555651000</nomorKK>
+    <alamat>Desa Tani Jaya 31</alamat>
+    <nomorHP>081273799171</nomorHP>
+    <kelompokTani>Kelompok 1</kelompokTani>
+  </com.datani.model.Petani>
+  <com.datani.model.Petani>
+    <id>40</id>
+    <nik>3210005368606032</nik>
+    <namaLengkap>Iwan Setiawan</namaLengkap>
+    <nomorKK>3210006127220000</nomorKK>
+    <alamat>Desa Tani Jaya 32</alamat>
+    <nomorHP>081291972035</nomorHP>
+    <kelompokTani>Kelompok 2</kelompokTani>
+  </com.datani.model.Petani>
+  <com.datani.model.Petani>
+    <id>41</id>
+    <nik>3210002237357033</nik>
+    <namaLengkap>Iwan Pratama</namaLengkap>
+    <nomorKK>3210007562062000</nomorKK>
+    <alamat>Desa Tani Jaya 33</alamat>
+    <nomorHP>081261783440</nomorHP>
+    <kelompokTani>Kelompok 3</kelompokTani>
+  </com.datani.model.Petani>
+  <com.datani.model.Petani>
+    <id>42</id>
+    <nik>3210001116663034</nik>
+    <namaLengkap>Siti Sari</namaLengkap>
+    <nomorKK>3210004707416000</nomorKK>
+    <alamat>Desa Tani Jaya 34</alamat>
+    <nomorHP>081269506125</nomorHP>
+    <kelompokTani>Kelompok 4</kelompokTani>
+  </com.datani.model.Petani>
+  <com.datani.model.Petani>
+    <id>43</id>
+    <nik>3210008963272035</nik>
+    <namaLengkap>Cipto Hidayat</namaLengkap>
+    <nomorKK>3210005297099000</nomorKK>
+    <alamat>Desa Tani Jaya 35</alamat>
+    <nomorHP>081220807532</nomorHP>
+    <kelompokTani>Kelompok 5</kelompokTani>
+  </com.datani.model.Petani>
+  <com.datani.model.Petani>
+    <id>44</id>
+    <nik>3210006887018036</nik>
+    <namaLengkap>Hadi Wijaya</namaLengkap>
+    <nomorKK>3210006283729000</nomorKK>
+    <alamat>Desa Tani Jaya 36</alamat>
+    <nomorHP>081263014793</nomorHP>
+    <kelompokTani>Kelompok 6</kelompokTani>
+  </com.datani.model.Petani>
+  <com.datani.model.Petani>
+    <id>45</id>
+    <nik>3210006573744037</nik>
+    <namaLengkap>Dewi Hidayat</namaLengkap>
+    <nomorKK>3210008671635000</nomorKK>
+    <alamat>Desa Tani Jaya 37</alamat>
+    <nomorHP>081232715334</nomorHP>
+    <kelompokTani>Kelompok 7</kelompokTani>
+  </com.datani.model.Petani>
+  <com.datani.model.Petani>
+    <id>46</id>
+    <nik>3210000197223038</nik>
+    <namaLengkap>Siti Santoso</namaLengkap>
+    <nomorKK>3210005223930000</nomorKK>
+    <alamat>Desa Tani Jaya 38</alamat>
+    <nomorHP>081232718580</nomorHP>
+    <kelompokTani>Kelompok 8</kelompokTani>
+  </com.datani.model.Petani>
+  <com.datani.model.Petani>
+    <id>47</id>
+    <nik>3210005701625039</nik>
+    <namaLengkap>Gunawan Pratama</namaLengkap>
+    <nomorKK>3210005545344000</nomorKK>
+    <alamat>Desa Tani Jaya 39</alamat>
+    <nomorHP>081228979535</nomorHP>
+    <kelompokTani>Kelompok 9</kelompokTani>
+  </com.datani.model.Petani>
+  <com.datani.model.Petani>
+    <id>48</id>
+    <nik>3210000694215040</nik>
+    <namaLengkap>Dewi Wijaya</namaLengkap>
+    <nomorKK>3210006902439000</nomorKK>
+    <alamat>Desa Tani Jaya 40</alamat>
+    <nomorHP>081224741854</nomorHP>
+    <kelompokTani>Kelompok 0</kelompokTani>
+  </com.datani.model.Petani>
+  <com.datani.model.Petani>
+    <id>49</id>
+    <nik>3210005093219041</nik>
+    <namaLengkap>Fajar Wibowo</namaLengkap>
+    <nomorKK>3210007691340000</nomorKK>
+    <alamat>Desa Tani Jaya 41</alamat>
+    <nomorHP>081225670600</nomorHP>
+    <kelompokTani>Kelompok 1</kelompokTani>
+  </com.datani.model.Petani>
+  <com.datani.model.Petani>
+    <id>50</id>
+    <nik>3210006954644042</nik>
+    <namaLengkap>Dewi Sari</namaLengkap>
+    <nomorKK>3210005707684000</nomorKK>
+    <alamat>Desa Tani Jaya 42</alamat>
+    <nomorHP>081281134842</nomorHP>
+    <kelompokTani>Kelompok 2</kelompokTani>
+  </com.datani.model.Petani>
+  <com.datani.model.Petani>
+    <id>51</id>
+    <nik>3210003571000043</nik>
+    <namaLengkap>Hadi Nugroho</namaLengkap>
+    <nomorKK>3210004984519000</nomorKK>
+    <alamat>Desa Tani Jaya 43</alamat>
+    <nomorHP>081263095823</nomorHP>
+    <kelompokTani>Kelompok 3</kelompokTani>
+  </com.datani.model.Petani>
+  <com.datani.model.Petani>
+    <id>52</id>
+    <nik>3210007840694044</nik>
+    <namaLengkap>Gunawan Baskoro</namaLengkap>
+    <nomorKK>3210005214050000</nomorKK>
+    <alamat>Desa Tani Jaya 44</alamat>
+    <nomorHP>081267095467</nomorHP>
+    <kelompokTani>Kelompok 4</kelompokTani>
+  </com.datani.model.Petani>
+  <com.datani.model.Petani>
+    <id>53</id>
+    <nik>3210007650498045</nik>
+    <namaLengkap>Iwan Wijaya</namaLengkap>
+    <nomorKK>3210004923734000</nomorKK>
+    <alamat>Desa Tani Jaya 45</alamat>
+    <nomorHP>081219955442</nomorHP>
+    <kelompokTani>Kelompok 5</kelompokTani>
+  </com.datani.model.Petani>
+  <com.datani.model.Petani>
+    <id>54</id>
+    <nik>3210007898655046</nik>
+    <namaLengkap>Fajar Hidayat</namaLengkap>
+    <nomorKK>3210000258661000</nomorKK>
+    <alamat>Desa Tani Jaya 46</alamat>
+    <nomorHP>081251909917</nomorHP>
+    <kelompokTani>Kelompok 6</kelompokTani>
+  </com.datani.model.Petani>
+  <com.datani.model.Petani>
+    <id>55</id>
+    <nik>3210001938028047</nik>
+    <namaLengkap>Gunawan Saputra</namaLengkap>
+    <nomorKK>3210003210412000</nomorKK>
+    <alamat>Desa Tani Jaya 47</alamat>
+    <nomorHP>081211843934</nomorHP>
+    <kelompokTani>Kelompok 7</kelompokTani>
+  </com.datani.model.Petani>
+  <com.datani.model.Petani>
+    <id>56</id>
+    <nik>3210008459431048</nik>
+    <namaLengkap>Dedi Sari</namaLengkap>
+    <nomorKK>3210002138711000</nomorKK>
+    <alamat>Desa Tani Jaya 48</alamat>
+    <nomorHP>081216707417</nomorHP>
+    <kelompokTani>Kelompok 8</kelompokTani>
+  </com.datani.model.Petani>
+  <com.datani.model.Petani>
+    <id>57</id>
+    <nik>3210001328387049</nik>
+    <namaLengkap>Dewi Nugroho</namaLengkap>
+    <nomorKK>3210002745107000</nomorKK>
+    <alamat>Desa Tani Jaya 49</alamat>
+    <nomorHP>081258595388</nomorHP>
+    <kelompokTani>Kelompok 9</kelompokTani>
+  </com.datani.model.Petani>
+  <com.datani.model.Petani>
+    <id>58</id>
+    <nik>3210001426037050</nik>
+    <namaLengkap>Dewi Putri</namaLengkap>
+    <nomorKK>3210001299964000</nomorKK>
+    <alamat>Desa Tani Jaya 50</alamat>
+    <nomorHP>081295090731</nomorHP>
+    <kelompokTani>Kelompok 0</kelompokTani>
+  </com.datani.model.Petani>
+  <com.datani.model.Petani>
+    <id>59</id>
+    <nik>3210006749456051</nik>
+    <namaLengkap>Lestari Setiawan</namaLengkap>
+    <nomorKK>3210004599007000</nomorKK>
+    <alamat>Desa Tani Jaya 51</alamat>
+    <nomorHP>081244329690</nomorHP>
+    <kelompokTani>Kelompok 1</kelompokTani>
+  </com.datani.model.Petani>
+  <com.datani.model.Petani>
+    <id>60</id>
+    <nik>3210006142862052</nik>
+    <namaLengkap>Cipto Nugroho</namaLengkap>
+    <nomorKK>3210000287616000</nomorKK>
+    <alamat>Desa Tani Jaya 52</alamat>
+    <nomorHP>081267997878</nomorHP>
+    <kelompokTani>Kelompok 2</kelompokTani>
+  </com.datani.model.Petani>
+  <com.datani.model.Petani>
+    <id>61</id>
+    <nik>3210008783034053</nik>
+    <namaLengkap>Gunawan Santoso</namaLengkap>
+    <nomorKK>3210007029255000</nomorKK>
+    <alamat>Desa Tani Jaya 53</alamat>
+    <nomorHP>081280689664</nomorHP>
+    <kelompokTani>Kelompok 3</kelompokTani>
+  </com.datani.model.Petani>
+  <com.datani.model.Petani>
+    <id>62</id>
+    <nik>3210007615329054</nik>
+    <namaLengkap>Hadi Wibowo</namaLengkap>
+    <nomorKK>3210001296545000</nomorKK>
+    <alamat>Desa Tani Jaya 54</alamat>
+    <nomorHP>081271166348</nomorHP>
+    <kelompokTani>Kelompok 4</kelompokTani>
+  </com.datani.model.Petani>
+  <com.datani.model.Petani>
+    <id>63</id>
+    <nik>3210005445441055</nik>
+    <namaLengkap>Gunawan Wibowo</namaLengkap>
+    <nomorKK>3210006262034000</nomorKK>
+    <alamat>Desa Tani Jaya 55</alamat>
+    <nomorHP>081248991641</nomorHP>
+    <kelompokTani>Kelompok 5</kelompokTani>
+  </com.datani.model.Petani>
+  <com.datani.model.Petani>
+    <id>64</id>
+    <nik>3210000704019056</nik>
+    <namaLengkap>Siti Kusuma</namaLengkap>
+    <nomorKK>3210005036681000</nomorKK>
+    <alamat>Desa Tani Jaya 56</alamat>
+    <nomorHP>081283190653</nomorHP>
+    <kelompokTani>Kelompok 6</kelompokTani>
+  </com.datani.model.Petani>
+  <com.datani.model.Petani>
+    <id>65</id>
+    <nik>3210005450824057</nik>
+    <namaLengkap>Eko Setiawan</namaLengkap>
+    <nomorKK>3210004510961000</nomorKK>
+    <alamat>Desa Tani Jaya 57</alamat>
+    <nomorHP>081285287356</nomorHP>
+    <kelompokTani>Kelompok 7</kelompokTani>
+  </com.datani.model.Petani>
+  <com.datani.model.Petani>
+    <id>66</id>
+    <nik>3210005165952058</nik>
+    <namaLengkap>Lestari Nugroho</namaLengkap>
+    <nomorKK>3210002965635000</nomorKK>
+    <alamat>Desa Tani Jaya 58</alamat>
+    <nomorHP>081223678759</nomorHP>
+    <kelompokTani>Kelompok 8</kelompokTani>
+  </com.datani.model.Petani>
+  <com.datani.model.Petani>
+    <id>67</id>
+    <nik>3210007286175059</nik>
+    <namaLengkap>Eko Saputra</namaLengkap>
+    <nomorKK>3210005364689000</nomorKK>
+    <alamat>Desa Tani Jaya 59</alamat>
+    <nomorHP>081297446930</nomorHP>
+    <kelompokTani>Kelompok 9</kelompokTani>
+  </com.datani.model.Petani>
+  <com.datani.model.Petani>
+    <id>68</id>
+    <nik>3210001497230060</nik>
+    <namaLengkap>Budi Hidayat</namaLengkap>
+    <nomorKK>3210005374014000</nomorKK>
+    <alamat>Desa Tani Jaya 60</alamat>
+    <nomorHP>081274645368</nomorHP>
+    <kelompokTani>Kelompok 0</kelompokTani>
+  </com.datani.model.Petani>
+  <com.datani.model.Petani>
+    <id>69</id>
+    <nik>3210008271093061</nik>
+    <namaLengkap>Iwan Santoso</namaLengkap>
+    <nomorKK>3210002333590000</nomorKK>
+    <alamat>Desa Tani Jaya 61</alamat>
+    <nomorHP>081288725307</nomorHP>
+    <kelompokTani>Kelompok 1</kelompokTani>
+  </com.datani.model.Petani>
+  <com.datani.model.Petani>
+    <id>70</id>
+    <nik>3210001235552062</nik>
+    <namaLengkap>Budi Kusuma</namaLengkap>
+    <nomorKK>3210007960436000</nomorKK>
+    <alamat>Desa Tani Jaya 62</alamat>
+    <nomorHP>081287431279</nomorHP>
+    <kelompokTani>Kelompok 2</kelompokTani>
+  </com.datani.model.Petani>
+  <com.datani.model.Petani>
+    <id>71</id>
+    <nik>3210007163001063</nik>
+    <namaLengkap>Joko Putri</namaLengkap>
+    <nomorKK>3210000466087000</nomorKK>
+    <alamat>Desa Tani Jaya 63</alamat>
+    <nomorHP>081259663686</nomorHP>
+    <kelompokTani>Kelompok 3</kelompokTani>
+  </com.datani.model.Petani>
+  <com.datani.model.Petani>
+    <id>72</id>
+    <nik>3210004949055064</nik>
+    <namaLengkap>Ahmad Sari</namaLengkap>
+    <nomorKK>3210006888156000</nomorKK>
+    <alamat>Desa Tani Jaya 64</alamat>
+    <nomorHP>081246484937</nomorHP>
+    <kelompokTani>Kelompok 4</kelompokTani>
+  </com.datani.model.Petani>
+  <com.datani.model.Petani>
+    <id>73</id>
+    <nik>3210001544782065</nik>
+    <namaLengkap>Dewi Putri</namaLengkap>
+    <nomorKK>3210004436837000</nomorKK>
+    <alamat>Desa Tani Jaya 65</alamat>
+    <nomorHP>081289842154</nomorHP>
+    <kelompokTani>Kelompok 5</kelompokTani>
+  </com.datani.model.Petani>
+  <com.datani.model.Petani>
+    <id>74</id>
+    <nik>3210000807512066</nik>
+    <namaLengkap>Eko Saputra</namaLengkap>
+    <nomorKK>3210007103623000</nomorKK>
+    <alamat>Desa Tani Jaya 66</alamat>
+    <nomorHP>081222203346</nomorHP>
+    <kelompokTani>Kelompok 6</kelompokTani>
+  </com.datani.model.Petani>
+  <com.datani.model.Petani>
+    <id>75</id>
+    <nik>3210005117123067</nik>
+    <namaLengkap>Dewi Wijaya</namaLengkap>
+    <nomorKK>3210006189369000</nomorKK>
+    <alamat>Desa Tani Jaya 67</alamat>
+    <nomorHP>081287971287</nomorHP>
+    <kelompokTani>Kelompok 7</kelompokTani>
+  </com.datani.model.Petani>
+  <com.datani.model.Petani>
+    <id>76</id>
+    <nik>3210000527793068</nik>
+    <namaLengkap>Lestari Wibowo</namaLengkap>
+    <nomorKK>3210003210305000</nomorKK>
+    <alamat>Desa Tani Jaya 68</alamat>
+    <nomorHP>081264829723</nomorHP>
+    <kelompokTani>Kelompok 8</kelompokTani>
+  </com.datani.model.Petani>
+  <com.datani.model.Petani>
+    <id>77</id>
+    <nik>3210004752718069</nik>
+    <namaLengkap>Lestari Wibowo</namaLengkap>
+    <nomorKK>3210007634041000</nomorKK>
+    <alamat>Desa Tani Jaya 69</alamat>
+    <nomorHP>081211347900</nomorHP>
+    <kelompokTani>Kelompok 9</kelompokTani>
+  </com.datani.model.Petani>
+  <com.datani.model.Petani>
+    <id>78</id>
+    <nik>3210002300856070</nik>
+    <namaLengkap>Iwan Kusuma</namaLengkap>
+    <nomorKK>3210004829850000</nomorKK>
+    <alamat>Desa Tani Jaya 70</alamat>
+    <nomorHP>081250508325</nomorHP>
+    <kelompokTani>Kelompok 0</kelompokTani>
+  </com.datani.model.Petani>
+  <com.datani.model.Petani>
+    <id>79</id>
+    <nik>3210004743609071</nik>
+    <namaLengkap>Siti Wibowo</namaLengkap>
+    <nomorKK>3210001319988000</nomorKK>
+    <alamat>Desa Tani Jaya 71</alamat>
+    <nomorHP>081213598445</nomorHP>
+    <kelompokTani>Kelompok 1</kelompokTani>
+  </com.datani.model.Petani>
+  <com.datani.model.Petani>
+    <id>80</id>
+    <nik>3210004474851072</nik>
+    <namaLengkap>Siti Saputra</namaLengkap>
+    <nomorKK>3210007016216000</nomorKK>
+    <alamat>Desa Tani Jaya 72</alamat>
+    <nomorHP>081266641227</nomorHP>
+    <kelompokTani>Kelompok 2</kelompokTani>
+  </com.datani.model.Petani>
+  <com.datani.model.Petani>
+    <id>81</id>
+    <nik>3210003442943073</nik>
+    <namaLengkap>Hadi Sari</namaLengkap>
+    <nomorKK>3210000461395000</nomorKK>
+    <alamat>Desa Tani Jaya 73</alamat>
+    <nomorHP>081265876975</nomorHP>
+    <kelompokTani>Kelompok 3</kelompokTani>
+  </com.datani.model.Petani>
+  <com.datani.model.Petani>
+    <id>82</id>
+    <nik>3210005359716074</nik>
+    <namaLengkap>Ahmad Saputra</namaLengkap>
+    <nomorKK>3210005814658000</nomorKK>
+    <alamat>Desa Tani Jaya 74</alamat>
+    <nomorHP>081257221552</nomorHP>
+    <kelompokTani>Kelompok 4</kelompokTani>
+  </com.datani.model.Petani>
+  <com.datani.model.Petani>
+    <id>83</id>
+    <nik>3210005055800075</nik>
+    <namaLengkap>Fajar Wibowo</namaLengkap>
+    <nomorKK>3210005594417000</nomorKK>
+    <alamat>Desa Tani Jaya 75</alamat>
+    <nomorHP>081248574148</nomorHP>
+    <kelompokTani>Kelompok 5</kelompokTani>
+  </com.datani.model.Petani>
+  <com.datani.model.Petani>
+    <id>84</id>
+    <nik>3210007417081076</nik>
+    <namaLengkap>Cipto Pratama</namaLengkap>
+    <nomorKK>3210000453043000</nomorKK>
+    <alamat>Desa Tani Jaya 76</alamat>
+    <nomorHP>081279220770</nomorHP>
+    <kelompokTani>Kelompok 6</kelompokTani>
+  </com.datani.model.Petani>
+  <com.datani.model.Petani>
+    <id>85</id>
+    <nik>3210006911975077</nik>
+    <namaLengkap>Lestari Pratama</namaLengkap>
+    <nomorKK>3210003338702000</nomorKK>
+    <alamat>Desa Tani Jaya 77</alamat>
+    <nomorHP>081270857118</nomorHP>
+    <kelompokTani>Kelompok 7</kelompokTani>
+  </com.datani.model.Petani>
+  <com.datani.model.Petani>
+    <id>86</id>
+    <nik>3210000445852078</nik>
+    <namaLengkap>Joko Nugroho</namaLengkap>
+    <nomorKK>3210006416434000</nomorKK>
+    <alamat>Desa Tani Jaya 78</alamat>
+    <nomorHP>081271742659</nomorHP>
+    <kelompokTani>Kelompok 8</kelompokTani>
+  </com.datani.model.Petani>
+  <com.datani.model.Petani>
+    <id>87</id>
+    <nik>3210007546232079</nik>
+    <namaLengkap>Siti Santoso</namaLengkap>
+    <nomorKK>3210007782201000</nomorKK>
+    <alamat>Desa Tani Jaya 79</alamat>
+    <nomorHP>081240816098</nomorHP>
+    <kelompokTani>Kelompok 9</kelompokTani>
+  </com.datani.model.Petani>
+  <com.datani.model.Petani>
+    <id>88</id>
+    <nik>3210008260686080</nik>
+    <namaLengkap>Fajar Setiawan</namaLengkap>
+    <nomorKK>3210006902143000</nomorKK>
+    <alamat>Desa Tani Jaya 80</alamat>
+    <nomorHP>081298196825</nomorHP>
+    <kelompokTani>Kelompok 0</kelompokTani>
+  </com.datani.model.Petani>
+  <com.datani.model.Petani>
+    <id>89</id>
+    <nik>3210003830927081</nik>
+    <namaLengkap>Dedi Hidayat</namaLengkap>
+    <nomorKK>3210008929261000</nomorKK>
+    <alamat>Desa Tani Jaya 81</alamat>
+    <nomorHP>081279035444</nomorHP>
+    <kelompokTani>Kelompok 1</kelompokTani>
+  </com.datani.model.Petani>
+  <com.datani.model.Petani>
+    <id>90</id>
+    <nik>3210003970073082</nik>
+    <namaLengkap>Siti Hidayat</namaLengkap>
+    <nomorKK>3210002430852000</nomorKK>
+    <alamat>Desa Tani Jaya 82</alamat>
+    <nomorHP>081248539923</nomorHP>
+    <kelompokTani>Kelompok 2</kelompokTani>
+  </com.datani.model.Petani>
+  <com.datani.model.Petani>
+    <id>91</id>
+    <nik>3210002446375083</nik>
+    <namaLengkap>Siti Pratama</namaLengkap>
+    <nomorKK>3210006148385000</nomorKK>
+    <alamat>Desa Tani Jaya 83</alamat>
+    <nomorHP>081248405505</nomorHP>
+    <kelompokTani>Kelompok 3</kelompokTani>
+  </com.datani.model.Petani>
+  <com.datani.model.Petani>
+    <id>92</id>
+    <nik>3210006440037084</nik>
+    <namaLengkap>Rina Sari</namaLengkap>
+    <nomorKK>3210004771942000</nomorKK>
+    <alamat>Desa Tani Jaya 84</alamat>
+    <nomorHP>081226766581</nomorHP>
+    <kelompokTani>Kelompok 4</kelompokTani>
+  </com.datani.model.Petani>
+  <com.datani.model.Petani>
+    <id>93</id>
+    <nik>3210001615087085</nik>
+    <namaLengkap>Hadi Hidayat</namaLengkap>
+    <nomorKK>3210008877587000</nomorKK>
+    <alamat>Desa Tani Jaya 85</alamat>
+    <nomorHP>081274868414</nomorHP>
+    <kelompokTani>Kelompok 5</kelompokTani>
+  </com.datani.model.Petani>
+  <com.datani.model.Petani>
+    <id>94</id>
+    <nik>3210000332180086</nik>
+    <namaLengkap>Siti Pratama</namaLengkap>
+    <nomorKK>3210008839013000</nomorKK>
+    <alamat>Desa Tani Jaya 86</alamat>
+    <nomorHP>081294031642</nomorHP>
+    <kelompokTani>Kelompok 6</kelompokTani>
+  </com.datani.model.Petani>
+  <com.datani.model.Petani>
+    <id>95</id>
+    <nik>3210000622560087</nik>
+    <namaLengkap>Budi Putri</namaLengkap>
+    <nomorKK>3210000078546000</nomorKK>
+    <alamat>Desa Tani Jaya 87</alamat>
+    <nomorHP>081244839995</nomorHP>
+    <kelompokTani>Kelompok 7</kelompokTani>
+  </com.datani.model.Petani>
+  <com.datani.model.Petani>
+    <id>96</id>
+    <nik>3210008553147088</nik>
+    <namaLengkap>Eko Santoso</namaLengkap>
+    <nomorKK>3210007448003000</nomorKK>
+    <alamat>Desa Tani Jaya 88</alamat>
+    <nomorHP>081265183995</nomorHP>
+    <kelompokTani>Kelompok 8</kelompokTani>
+  </com.datani.model.Petani>
+  <com.datani.model.Petani>
+    <id>97</id>
+    <nik>3210006008758089</nik>
+    <namaLengkap>Gunawan Putri</namaLengkap>
+    <nomorKK>3210005010446000</nomorKK>
+    <alamat>Desa Tani Jaya 89</alamat>
+    <nomorHP>081232766905</nomorHP>
+    <kelompokTani>Kelompok 9</kelompokTani>
+  </com.datani.model.Petani>
+  <com.datani.model.Petani>
+    <id>98</id>
+    <nik>3210000993956090</nik>
+    <namaLengkap>Iwan Pratama</namaLengkap>
+    <nomorKK>3210003017566000</nomorKK>
+    <alamat>Desa Tani Jaya 90</alamat>
+    <nomorHP>081219165781</nomorHP>
+    <kelompokTani>Kelompok 0</kelompokTani>
+  </com.datani.model.Petani>
+  <com.datani.model.Petani>
+    <id>99</id>
+    <nik>3210007778634091</nik>
+    <namaLengkap>Fajar Baskoro</namaLengkap>
+    <nomorKK>3210007619688000</nomorKK>
+    <alamat>Desa Tani Jaya 91</alamat>
+    <nomorHP>081266386176</nomorHP>
+    <kelompokTani>Kelompok 1</kelompokTani>
+  </com.datani.model.Petani>
+  <com.datani.model.Petani>
+    <id>100</id>
+    <nik>3210002765818092</nik>
+    <namaLengkap>Lestari Setiawan</namaLengkap>
+    <nomorKK>3210004927614000</nomorKK>
+    <alamat>Desa Tani Jaya 92</alamat>
+    <nomorHP>081219239778</nomorHP>
+    <kelompokTani>Kelompok 2</kelompokTani>
+  </com.datani.model.Petani>
+  <com.datani.model.Petani>
+    <id>101</id>
+    <nik>3210002317622093</nik>
+    <namaLengkap>Fajar Kusuma</namaLengkap>
+    <nomorKK>3210000446416000</nomorKK>
+    <alamat>Desa Tani Jaya 93</alamat>
+    <nomorHP>081272363560</nomorHP>
+    <kelompokTani>Kelompok 3</kelompokTani>
+  </com.datani.model.Petani>
+  <com.datani.model.Petani>
+    <id>102</id>
+    <nik>3210008609474094</nik>
+    <namaLengkap>Hadi Pratama</namaLengkap>
+    <nomorKK>3210005300797000</nomorKK>
+    <alamat>Desa Tani Jaya 94</alamat>
+    <nomorHP>081239142620</nomorHP>
+    <kelompokTani>Kelompok 4</kelompokTani>
+  </com.datani.model.Petani>
+  <com.datani.model.Petani>
+    <id>103</id>
+    <nik>3210007932364095</nik>
+    <namaLengkap>Gunawan Santoso</namaLengkap>
+    <nomorKK>3210003452532000</nomorKK>
+    <alamat>Desa Tani Jaya 95</alamat>
+    <nomorHP>081210840680</nomorHP>
+    <kelompokTani>Kelompok 5</kelompokTani>
+  </com.datani.model.Petani>
+  <com.datani.model.Petani>
+    <id>104</id>
+    <nik>3210003297868096</nik>
+    <namaLengkap>Iwan Nugroho</namaLengkap>
+    <nomorKK>3210008447240000</nomorKK>
+    <alamat>Desa Tani Jaya 96</alamat>
+    <nomorHP>081289224838</nomorHP>
+    <kelompokTani>Kelompok 6</kelompokTani>
+  </com.datani.model.Petani>
+  <com.datani.model.Petani>
+    <id>105</id>
+    <nik>3210008019885097</nik>
+    <namaLengkap>Fajar Wijaya</namaLengkap>
+    <nomorKK>3210004174780000</nomorKK>
+    <alamat>Desa Tani Jaya 97</alamat>
+    <nomorHP>081254080593</nomorHP>
+    <kelompokTani>Kelompok 7</kelompokTani>
+  </com.datani.model.Petani>
+  <com.datani.model.Petani>
+    <id>106</id>
+    <nik>3210002713965098</nik>
+    <namaLengkap>Siti Putri</namaLengkap>
+    <nomorKK>3210005419427000</nomorKK>
+    <alamat>Desa Tani Jaya 98</alamat>
+    <nomorHP>081237804599</nomorHP>
+    <kelompokTani>Kelompok 8</kelompokTani>
+  </com.datani.model.Petani>
+  <com.datani.model.Petani>
+    <id>107</id>
+    <nik>3210000165292099</nik>
+    <namaLengkap>Eko Kusuma</namaLengkap>
+    <nomorKK>3210004566304000</nomorKK>
+    <alamat>Desa Tani Jaya 99</alamat>
+    <nomorHP>081248713237</nomorHP>
+    <kelompokTani>Kelompok 9</kelompokTani>
   </com.datani.model.Petani>
 </list>

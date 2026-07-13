@@ -23,16 +23,16 @@
     <left>
         <VBox styleClass="login-brand-panel" prefWidth="480" minWidth="380" alignment="CENTER_LEFT" spacing="18">
             <padding>
-                <Insets top="48" right="48" bottom="48" left="48"/>
+                <Insets top="64" right="48" bottom="48" left="48"/>
             </padding>
 
             <StackPane styleClass="login-logo-badge" maxWidth="64" maxHeight="64" prefWidth="64" prefHeight="64">
-                <Label text="D" styleClass="login-logo-letter"/>
+                <Label text="🌾" styleClass="login-logo-letter"/>
             </StackPane>
 
             <VBox spacing="4">
                 <Label text="DATANI" styleClass="login-brand-title"/>
-                <Label text="Sistem Informasi Data Petani" styleClass="login-brand-subtitle"/>
+                <Label text="Sistem informasi pengajuan data petani" styleClass="login-brand-subtitle" wrapText="true"/>
             </VBox>
 
             <Region prefHeight="12"/>
